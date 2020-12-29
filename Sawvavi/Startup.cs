@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Sawvavi
+namespace FuelProject
 {
     public class Startup
     {
@@ -17,6 +17,12 @@ namespace Sawvavi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(option => option.EnableEndpointRouting = false);
+            services.AddRazorPages()
+                .AddMvcOptions(options =>
+                {
+                    options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(
+                        _ => "ველის შევსება აუცილებელია");
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,6 +35,13 @@ namespace Sawvavi
 
             app.UseRouting();
             app.UseMvcWithDefaultRoute();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Fuel}/{action=ParticularKm}");
+            });
+
         }
     }
 }
