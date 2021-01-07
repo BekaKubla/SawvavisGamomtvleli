@@ -9,23 +9,9 @@ namespace FuelProject.Controllers
 {
     public class FuelController :Controller
     {
-        [HttpGet]
-        public IActionResult ParticularKm()
+        public IActionResult MapAndGasoline()
         {
             return View();
-        }
-        [HttpPost]
-        public IActionResult ParticularKm(FuelProps model)
-        {
-            if (ModelState.IsValid)
-            {
-                //Burn per particular kilometer
-                double litrePerKilometer = 100 / model.BurningGasoline;
-                model.Result = model.Kilometers / litrePerKilometer / model.BurningGasoline * model.BurningGasoline;
-                model.Result = Convert.ToDouble(model.Result.ToString("0.00"));
-                return View(model);
-            }
-            return View(model);
         }
         [HttpGet]
         public ActionResult PerHundredKm()
