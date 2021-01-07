@@ -3,61 +3,10 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
-    <script type='text/javascript'>
-        var map, directionsManager;
-
-        function GetMap() {
-            map = new Microsoft.Maps.Map('#myMap', {});
-            Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
-                directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
-                directionsManager.setRenderOptions({ itineraryContainer: '#directionsItinerary' });
-                directionsManager.showInputPanel('directionsPanel');
-                directionsManager.setRequestOptions({
-                    routeMode: Microsoft.Maps.Directions.RouteMode.driving
-                });
-            });
-        }
-        function GetDirections() {
-            directionsManager.clearAll();
-            directionsManager.clearDisplay();
-            var start = new Microsoft.Maps.Directions.Waypoint({ address: document.getElementById('fromTbx').value });
-            directionsManager.addWaypoint(start);
-            var end = new Microsoft.Maps.Directions.Waypoint({ address: document.getElementById('toTbx').value });
-            directionsManager.addWaypoint(end);
-            Microsoft.Maps.Events.addHandler(directionsManager, 'directionsError', directionsError);
-            Microsoft.Maps.Events.addHandler(directionsManager, 'directionsUpdated', directionsUpdated);
-            directionsManager.calculateDirections();
-        }
-        function directionsUpdated(e) {
-            var routeIdx = directionsManager.getRequestOptions().routeIndex;
-            var distance = Math.round(e.routeSummary[routeIdx].distance * 100) / 100;
-            var units = directionsManager.getRequestOptions().distanceUnit;
-            var distanceUnits = '';
-            if (units == Microsoft.Maps.Directions.DistanceUnit.km) {
-                distanceUnits = 'km'
-            }
-            var vehicleBurningGasoline = document.getElementById("burningGasoline").value;
-            var litrePerKilometer = 100 / vehicleBurningGasoline;
-            var result = distance / litrePerKilometer;
-            result = result.toFixed(1);
-            var time = Math.round(e.routeSummary[routeIdx].timeWithTraffic / 60);
-            document.getElementById('routeInfoPanel').innerHTML = 'მანძილი: ' + distance + ' ' + distanceUnits + '<br/>დრო მანძილის დასაფარად: ' + time + ' წუთი' + '<br/>მანძილისი დასაფარად საწვავის რაოდენობა : ' +result + ' ლიტრი';
-        }
-        function directionsError(e) {
-            alert('Error: ' + e.message + '\r\nResponse Code: ' + e.responseCode)
-        }
-    </script>
+    <script type='text/javascript'>var map, directionsManager; function GetMap() { map = new Microsoft.Maps.Map('#myMap', {}); Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () { directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map); directionsManager.setRenderOptions({ itineraryContainer: '#directionsItinerary' }); directionsManager.showInputPanel('directionsPanel'); directionsManager.setRequestOptions({ routeMode: Microsoft.Maps.Directions.RouteMode.driving }); }); } function GetDirections() { directionsManager.clearAll(); directionsManager.clearDisplay(); var start = new Microsoft.Maps.Directions.Waypoint({ address: document.getElementById('fromTbx').value }); directionsManager.addWaypoint(start); var end = new Microsoft.Maps.Directions.Waypoint({ address: document.getElementById('toTbx').value }); directionsManager.addWaypoint(end); Microsoft.Maps.Events.addHandler(directionsManager, 'directionsError', directionsError); Microsoft.Maps.Events.addHandler(directionsManager, 'directionsUpdated', directionsUpdated); directionsManager.calculateDirections(); } function directionsUpdated(e) { var routeIdx = directionsManager.getRequestOptions().routeIndex; var distance = Math.round(e.routeSummary[routeIdx].distance * 100) / 100; var units = directionsManager.getRequestOptions().distanceUnit; var distanceUnits = ''; if (units == Microsoft.Maps.Directions.DistanceUnit.km) { distanceUnits = 'km' } var vehicleBurningGasoline = document.getElementById("burningGasoline").value; var litrePerKilometer = 100 / vehicleBurningGasoline; var result = distance / litrePerKilometer; result = result.toFixed(1); var time = Math.round(e.routeSummary[routeIdx].timeWithTraffic / 60); document.getElementById('routeInfoPanel').innerHTML = 'მანძილი: ' + distance + ' ' + distanceUnits + '<br/>დრო მანძილის დასაფარად: ' + time + ' წუთი' + '<br/>მანძილისი დასაფარად საწვავის რაოდენობა : ' + result + ' ლიტრი'; } function directionsError(e) { alert('Error: ' + e.message + '\r\nResponse Code: ' + e.responseCode) }</script>
     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AkC0sJoPfLbvE3feNBAKiBct4hMbvJ5Knhoc6rvg32VLNOb_GvZXrjqh-0VRX5jB' async defer></script>
 </head>
 <body>
-    <div id="myMap" style="position:relative;width:1500px;height:500px;"></div>
-    <div id='routeInfoPanel'></div>
-
-    <div style="margin-top:10px;">
-        საიდან : <input id="fromTbx" type="text" placeholder="ჩაწერეთ ქალაქი" />
-        სად : <input id="toTbx" type="text" placeholder="ჩაწერეთ ქალაქი"/>
-        მანქანის წვა :<input id="burningGasoline" step="any" type="number" placeholder="მანქანის წვა" class="col-lg-2" />
-        <input type="button" onclick="GetDirections()" value="გამოთვლა" />
-    </div>
+    <div id="myMap" style="position:relative;width:1500px;height:500px;"></div><div id='routeInfoPanel'></div><div style="margin-top:10px;"> საიდან : <input id="fromTbx" type="text" placeholder="ჩაწერეთ ქალაქი" /> სად : <input id="toTbx" type="text" placeholder="ჩაწერეთ ქალაქი" /> მანქანის წვა :<input id="burningGasoline" step="any" type="number" placeholder="მანქანის წვა" class="col-lg-2" /> <input type="button" onclick="GetDirections()" value="გამოთვლა" /> </div>
 </body>
 </html>
