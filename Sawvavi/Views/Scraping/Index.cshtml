@@ -33,10 +33,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FuelName)
+                @Html.DisplayNameFor(model => model.RompetrolName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayNameFor(model => model.RompetrolPrice)
             </th>
         </tr>
     </thead>
@@ -44,14 +44,42 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FuelName)
+                @Html.DisplayFor(modelItem => item.RompetrolName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                @Html.DisplayFor(modelItem => item.RompetrolPrice)
             </td>
+        </tr>
+        <tr>
+
         </tr>
 }
     </tbody>
 </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(o=>o.GulfName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(o=>o.GulfPrice)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem=>item.GulfName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem=>item.GulfPrice)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
 </html>

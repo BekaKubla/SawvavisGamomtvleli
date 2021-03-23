@@ -35,21 +35,16 @@ namespace FuelProject.Controllers
             {
                 fuels.Add(new FuelPrice()
                 {
-                    Price = item.InnerText.ToString().Trim()
+                    RompetrolPrice=item.InnerText.ToString().Trim()
                 });
             }
-            fuels.Add(new FuelPrice()
-            {
-                FuelName = "გაზი"
-            });
-            fuels[0].FuelName = "სუპერი";
-            fuels[1].FuelName = "ევრო პრემიუმი";
-            fuels[2].FuelName = "ევრო რეგულარი";
-            fuels[3].FuelName = "ევრო დიზელი";
-            fuels[4].FuelName = "დიზელი";
+            fuels[0].RompetrolName = "Efix სუპერი";
+            fuels[1].RompetrolName = "Efix ევრო პრემიუმი";
+            fuels[2].RompetrolName = "ევრო რეგულარი";
+            fuels[3].RompetrolName = "Efix ევრო დიზელი";
+            fuels[4].RompetrolName = "ევრო დიზელი";
 
             //Gulf Scraping
-
             var gulfUrl = "https://gulf.ge/ge/fuel_prices";
 
             var gulfHttpClient = new HttpClient();
@@ -68,19 +63,23 @@ namespace FuelProject.Controllers
 
             foreach (var item in gulfProductList)
             {
-                fuels.Add(new FuelPrice()
+                fuels.Add(new FuelPrice
                 {
-                    Price = item.InnerText.ToString().Trim()
+                    GulfPrice = item.InnerText.ToString().Trim()
                 });
+
+                //fuels.Add(new FuelPrice()
+                //{
+                //    Price = item.InnerText.ToString().Trim()
+                //});
             }
-            fuels[6].FuelName = "სუპერი";
-            fuels[7].FuelName = "პრემიუმი";
-            fuels[8].FuelName = "G-Force ევრო რეგულარი";
-            fuels[9].FuelName = "ევრო რეგულარი";
-            fuels[10].FuelName = "G-Force ევრო დიზელი";
-            fuels[11].FuelName = "ევრო დიზელი";
-            fuels[12].FuelName = "გაზი";
-            Console.ReadKey();
+            fuels[5].GulfName = "G-Force სუპერი";
+            fuels[6].GulfName = "G-Force პრემიუმი";
+            fuels[7].GulfName = "G-Force ევრო რეგულარი";
+            fuels[8].GulfName = "ევრო რეგულარი";
+            fuels[9].GulfName = "G-Force ევრო დიზელი";
+            fuels[10].GulfName = "ევრო დიზელი";
+            fuels[11].GulfName = "გაზი";
 
             return View(fuels);
         }

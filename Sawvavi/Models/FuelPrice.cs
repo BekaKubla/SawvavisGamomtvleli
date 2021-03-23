@@ -9,8 +9,12 @@ namespace FuelProject.Models
     public class FuelPrice
     {
         [Display(Name ="ფასი")]
-        public string Price { get; set; }
-        [Display(Name ="საწვავის სახელი")]
-        public string FuelName { get; set; }
+        public string RompetrolPrice { get; set; }
+        [Display(Name ="რომპეტროლი")]
+        public string RompetrolName { get; set; }
+        [Display(Name ="გალფი")]
+        public string GulfName { get; set; }
+        [Display(Name ="ფასი")]
+        public string GulfPrice { get; set; }
     }
 }
