@@ -9,6 +9,10 @@
     {
       "library": "jquery@3.5.1",
       "destination": "lib/jquery/"
+    },
+    {
+      "library": "twitter-bootstrap@4.6.0",
+      "destination": "wwwroot/twitter-bootstrap/"
     }
   ]
 }
