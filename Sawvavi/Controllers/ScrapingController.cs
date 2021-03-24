@@ -38,11 +38,11 @@ namespace FuelProject.Controllers
                     RompetrolPrice=item.InnerText.ToString().Trim()
                 });
             }
-            fuels[0].RompetrolName = "Efix სუპერი";
-            fuels[1].RompetrolName = "Efix ევრო პრემიუმი";
-            fuels[2].RompetrolName = "ევრო რეგულარი";
-            fuels[3].RompetrolName = "Efix ევრო დიზელი";
-            fuels[4].RompetrolName = "ევრო დიზელი";
+            fuels[0].RompetrolPrice = fuels[0].RompetrolPrice + "superi";
+            fuels[1].RompetrolPrice = fuels[1].RompetrolPrice + "evropremiumi";
+            fuels[2].RompetrolPrice = fuels[2].RompetrolPrice + "evroregulari";
+            fuels[3].RompetrolPrice = fuels[3].RompetrolPrice + "evrodizeli";
+            fuels[4].RompetrolPrice = fuels[4].RompetrolPrice + "diseli";
 
             //Gulf Scraping
             var gulfUrl = "https://gulf.ge/ge/fuel_prices";
@@ -67,19 +67,14 @@ namespace FuelProject.Controllers
                 {
                     GulfPrice = item.InnerText.ToString().Trim()
                 });
-
-                //fuels.Add(new FuelPrice()
-                //{
-                //    Price = item.InnerText.ToString().Trim()
-                //});
             }
-            fuels[5].GulfName = "G-Force სუპერი";
-            fuels[6].GulfName = "G-Force პრემიუმი";
-            fuels[7].GulfName = "G-Force ევრო რეგულარი";
-            fuels[8].GulfName = "ევრო რეგულარი";
-            fuels[9].GulfName = "G-Force ევრო დიზელი";
-            fuels[10].GulfName = "ევრო დიზელი";
-            fuels[11].GulfName = "გაზი";
+            fuels[5].GulfPrice = fuels[5].GulfPrice + "superi";
+            fuels[6].GulfPrice = fuels[6].GulfPrice + "premiumi";
+            fuels[7].GulfPrice = fuels[7].GulfPrice + "evroregulari";
+            fuels[8].GulfPrice = fuels[8].GulfPrice + "regularri";
+            fuels[9].GulfPrice = fuels[9].GulfPrice + "evrodizeli";
+            fuels[10].GulfPrice = fuels[10].GulfPrice + "diseli";
+            fuels[11].GulfPrice = fuels[11].GulfPrice + "gazi";
 
             return View(fuels);
         }
