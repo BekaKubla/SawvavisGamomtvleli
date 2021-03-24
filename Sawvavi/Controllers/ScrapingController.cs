@@ -54,11 +54,11 @@ namespace FuelProject.Controllers
             gulfHtmlDocument.LoadHtml(gulfHtml);
 
 
-            var GulfProductsHtml = gulfHtmlDocument.DocumentNode.Descendants("tr")
+            var gulfProductsHtml = gulfHtmlDocument.DocumentNode.Descendants("tr")
                 .Where(node => node.GetAttributeValue("class", "")
                 .Contains("prices_cnt")).ToList();
 
-            var gulfProductList = GulfProductsHtml[0].Descendants("td")
+            var gulfProductList = gulfProductsHtml[0].Descendants("td")
                 .Where(o => o.InnerText.StartsWith("1.") || o.InnerText.StartsWith("2.")).ToList();
 
             foreach (var item in gulfProductList)
@@ -76,6 +76,96 @@ namespace FuelProject.Controllers
             fuels[10].GulfPrice = fuels[10].GulfPrice + "diseli";
             fuels[11].GulfPrice = fuels[11].GulfPrice + "gazi";
 
+            //portal  Scraping
+            var portalUrl = "http://portal.com.ge/georgian/home";
+
+            var portalfHttpClient = new HttpClient();
+            var portalHtml = await gulfHttpClient.GetStringAsync(portalUrl);
+            var portalHtmlDocument = new HtmlDocument();
+
+            portalHtmlDocument.LoadHtml(portalHtml);
+
+            var portalProductsHtml = portalHtmlDocument.DocumentNode.Descendants("div")
+                                   .Where(node => node.GetAttributeValue("class", "")
+                                   .Contains("fule_cols")).ToList();
+
+            var portalProductList = portalProductsHtml[0].Descendants("td")
+                                  .Where(o => o.InnerText.StartsWith("1.") || o.InnerText.StartsWith("2.")).ToList();
+            foreach(var item in portalProductList)
+            {
+                fuels.Add(new FuelPrice
+                {
+                    PortalPrice = item.InnerText.ToString().Trim()
+                });
+            }
+            fuels[12].PortalPrice = fuels[12].PortalPrice + "premiumi";
+            fuels[13].PortalPrice = fuels[13].PortalPrice + "evroregulari";
+            fuels[14].PortalPrice = fuels[14].PortalPrice + "regularri";
+            fuels[15].PortalPrice = fuels[15].PortalPrice + "evrodizeli";
+            fuels[16].PortalPrice = fuels[16].PortalPrice + "effectivedisseli";
+            fuels[17].PortalPrice = fuels[17].PortalPrice + "diseli";
+
+
+            //optima scraping
+
+            var optimaUrl = "http://optimapetrol.ge/";
+
+            var optimaHttpClient = new HttpClient();
+            var optimaHtml = await optimaHttpClient.GetStringAsync(optimaUrl);
+            var optimaHtmlDocument = new HtmlDocument();
+
+            optimaHtmlDocument.LoadHtml(optimaHtml);
+
+            var optimaProductsHtml= optimaHtmlDocument.DocumentNode.Descendants("div")
+                                   .Where(node => node.GetAttributeValue("class", "")
+                                   .Contains("container")).ToList();
+            var optimaProductList = optimaProductsHtml[4].Descendants("div")
+                .Where(o => o.InnerText.StartsWith("1.") || o.InnerText.StartsWith("2.")).ToList();
+
+            foreach(var item in optimaProductList)
+            {
+                fuels.Add(new FuelPrice
+                {
+                    OptimaPrice = item.InnerText.ToString().Trim()
+                });
+            }
+            fuels[18].OptimaPrice = fuels[18].OptimaPrice + "premiumi";
+            fuels[19].OptimaPrice = fuels[19].OptimaPrice + "evroregulari";
+            fuels[20].OptimaPrice = fuels[20].OptimaPrice + "evrodizeli";
+            fuels[21].OptimaPrice = fuels[21].OptimaPrice + "diseli";
+
+            //socar scraping
+            var socarUrl = "https://www.sgp.ge/ge/price";
+
+            var socarHttpClient = new HttpClient();
+            var socarHtml = await optimaHttpClient.GetStringAsync(socarUrl);
+            var socarHtmlDocument = new HtmlDocument();
+
+            socarHtmlDocument.LoadHtml(socarHtml);
+
+
+            var socarProductsHtml = socarHtmlDocument.DocumentNode.Descendants("table")
+                                   .Where(node => node.GetAttributeValue("class", "")
+                                   .Contains("table table-bordered table-striped")).ToList();
+            var socarProductList = socarProductsHtml[0].Descendants("td")
+                                   .Where(o => o.InnerText.Contains("1.")||o.InnerText.Contains("2.")||o.InnerText.Contains("3")||o.InnerText.Contains("0"));
+            var socarProductListTake = socarProductList.Skip(1).Take(8);
+            foreach(var item in socarProductListTake)
+            {
+                fuels.Add(new FuelPrice
+                {
+                    SocarPrice = item.InnerText.ToString().Trim()
+                });
+            }
+
+            fuels[22].SocarPrice = fuels[22].SocarPrice + "superi";
+            fuels[23].SocarPrice = fuels[23].SocarPrice + "premiumi";
+            fuels[24].SocarPrice = fuels[24].SocarPrice + "regularri";
+            fuels[25].SocarPrice = fuels[25].SocarPrice + "evroregulari";
+            fuels[26].SocarPrice = fuels[26].SocarPrice + "diseli";
+            fuels[27].SocarPrice = fuels[27].SocarPrice + "evrodizeli";
+            fuels[28].SocarPrice = fuels[28].SocarPrice + "LPG";
+            fuels[29].SocarPrice = fuels[29].SocarPrice + "CNG";
             return View(fuels);
         }
     }

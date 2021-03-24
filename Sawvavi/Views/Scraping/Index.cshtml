@@ -34,7 +34,7 @@
 
             .table-cell {
                 display: table-cell;
-                width: 30%;
+                width: 10%;
                 text-align: center;
                 padding: 4px 0;
                 border-right: 1px solid #d6d4d4;
@@ -62,10 +62,25 @@
                 <p>საწვავის დასახელება</p>
             </div>
             <div class="table-cell">
+                <p>Socar</p>
+            </div>
+            <div class="table-cell">
                 <p>Gulf</p>
             </div>
             <div class="table-cell">
                 <p>Rompetrol</p>
+            </div>
+            <div class="table-cell">
+                <p>Wissol</p>
+            </div>
+            <div class="table-cell">
+                <p>Lukoil</p>
+            </div>
+            <div class="table-cell">
+                <p>Portal</p>
+            </div>
+            <div class="table-cell">
+                <p>Optima</p>
             </div>
         </div>
         <div class="table-row">
@@ -75,15 +90,15 @@
             <div class="table-cell">
                 @foreach (var item in Model)
                 {
-                    if (item.GulfPrice==null)
+                    if (item.SocarPrice == null)
                     {
                         continue;
                     }
                     else
                     {
-                        if (item.GulfPrice.Contains("superi"))
+                        if (item.SocarPrice.Contains("superi"))
                         {
-                            <p>@item.GulfPrice.Replace("superi","")</p>
+                            <p>@item.SocarPrice.Replace("superi", "")</p>
                         }
                         else
                         {
@@ -92,7 +107,27 @@
                     }
                 }
             </div>
-            <div class="table-cell last-cell">
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.GulfPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.GulfPrice.Contains("superi"))
+                        {
+                            <p>@item.GulfPrice.Replace("superi", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+            </div>
+            <div class="table-cell">
                 @foreach (var item in Model)
                 {
                     if (item.RompetrolPrice == null)
@@ -112,10 +147,42 @@
                     }
                 }
             </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell  last-cell">
+                <p>არ არის..</p>
+            </div>
         </div>
         <div class="table-row">
             <div class="table-cell">
                 <p>პრემიუმი</p>
+            </div>
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.SocarPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.SocarPrice.Contains("premiumi"))
+                        {
+                            <p>@item.SocarPrice.Replace("premiumi", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
             </div>
             <div class="table-cell">
                 @foreach (var item in Model)
@@ -137,7 +204,7 @@
                     }
                 }
             </div>
-            <div class="table-cell last-cell">
+            <div class="table-cell">
                 @foreach (var item in Model)
                 {
                     if (item.RompetrolPrice == null)
@@ -157,10 +224,76 @@
                     }
                 }
             </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.PortalPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.PortalPrice.Contains("premiumi"))
+                        {
+                            <p>@item.PortalPrice.Replace("premiumi", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+            </div>
+            <div class="table-cell  last-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.OptimaPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.OptimaPrice.Contains("premiumi"))
+                        {
+                            <p>@item.OptimaPrice.Replace("premiumi", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+            </div>
         </div>
         <div class="table-row">
             <div class="table-cell">
                 <p>ევრო რეგულარი</p>
+            </div>
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.SocarPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.SocarPrice.Contains("evroregulari"))
+                        {
+                            <p>@item.SocarPrice.Replace("evroregulari", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
             </div>
             <div class="table-cell">
                 @foreach (var item in Model)
@@ -182,7 +315,7 @@
                     }
                 }
             </div>
-            <div class="table-cell last-cell">
+            <div class="table-cell">
                 @foreach (var item in Model)
                 {
                     if (item.RompetrolPrice == null)
@@ -202,10 +335,76 @@
                     }
                 }
             </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.PortalPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.PortalPrice.Contains("evroregulari"))
+                        {
+                            <p>@item.PortalPrice.Replace("evroregulari", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+            </div>
+            <div class="table-cell  last-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.OptimaPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.OptimaPrice.Contains("evroregulari"))
+                        {
+                            <p>@item.OptimaPrice.Replace("evroregulari", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+            </div>
         </div>
         <div class="table-row">
             <div class="table-cell">
                 <p>რეგულარი</p>
+            </div>
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.SocarPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.SocarPrice.Contains("regularri"))
+                        {
+                            <p>@item.SocarPrice.Replace("regularri", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
             </div>
             <div class="table-cell">
                 @foreach (var item in Model)
@@ -227,13 +426,62 @@
                     }
                 }
             </div>
-            <div class="table-cell last-cell">
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.PortalPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.PortalPrice.Contains("regularri"))
+                        {
+                            <p>@item.PortalPrice.Replace("regularri", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+            </div>
+            <div class="table-cell  last-cell">
                 <p>არ არის..</p>
             </div>
         </div>
         <div class="table-row">
             <div class="table-cell">
                 <p>ევრო დიზელი</p>
+            </div>
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.SocarPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.SocarPrice.Contains("evrodizeli"))
+                        {
+                            <p>@item.SocarPrice.Replace("evrodizeli", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
             </div>
             <div class="table-cell">
                 @foreach (var item in Model)
@@ -255,7 +503,7 @@
                     }
                 }
             </div>
-            <div class="table-cell last-cell">
+            <div class="table-cell">
                 @foreach (var item in Model)
                 {
                     if (item.RompetrolPrice == null)
@@ -275,10 +523,76 @@
                     }
                 }
             </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.PortalPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.PortalPrice.Contains("evrodizeli"))
+                        {
+                            <p>@item.PortalPrice.Replace("evrodizeli", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+            </div>
+            <div class="table-cell  last-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.OptimaPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.OptimaPrice.Contains("evrodizeli"))
+                        {
+                            <p>@item.OptimaPrice.Replace("evrodizeli", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+            </div>
         </div>
         <div class="table-row">
             <div class="table-cell">
                 <p>დიზელი</p>
+            </div>
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.SocarPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.SocarPrice.Contains("diseli"))
+                        {
+                            <p>@item.SocarPrice.Replace("diseli", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
             </div>
             <div class="table-cell">
                 @foreach (var item in Model)
@@ -300,7 +614,7 @@
                     }
                 }
             </div>
-            <div class="table-cell last-cell">
+            <div class="table-cell">
                 @foreach (var item in Model)
                 {
                     if (item.RompetrolPrice == null)
@@ -320,10 +634,76 @@
                     }
                 }
             </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.PortalPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.PortalPrice.Contains("diseli"))
+                        {
+                            <p>@item.PortalPrice.Replace("diseli", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+            </div>
+            <div class="table-cell  last-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.OptimaPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.OptimaPrice.Contains("diseli"))
+                        {
+                            <p>@item.OptimaPrice.Replace("diseli", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+            </div>
         </div>
         <div class="table-row">
             <div class="table-cell">
-                <p>გაზი</p>
+                <p>ბუნებრივი გაზი</p>
+            </div>
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.SocarPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.SocarPrice.Contains("CNG"))
+                        {
+                            <p>@item.SocarPrice.Replace("CNG", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
             </div>
             <div class="table-cell">
                 @foreach (var item in Model)
@@ -345,7 +725,62 @@
                     }
                 }
             </div>
-            <div class="table-cell last-cell">
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell  last-cell">
+                <p>არ არის..</p>
+            </div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">
+                <p>თხევადი გაზი</p>
+            </div>
+            <div class="table-cell">
+                @foreach (var item in Model)
+                {
+                    if (item.SocarPrice == null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        if (item.SocarPrice.Contains("LPG"))
+                        {
+                            <p>@item.SocarPrice.Replace("LPG", "")</p>
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+            </div>
+            <div class="table-cell">
+                <p>არ არის...</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell">
+                <p>არ არის..</p>
+            </div>
+            <div class="table-cell  last-cell">
                 <p>არ არის..</p>
             </div>
         </div>

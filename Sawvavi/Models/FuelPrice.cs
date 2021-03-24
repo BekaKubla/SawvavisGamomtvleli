@@ -8,9 +8,10 @@ namespace FuelProject.Models
 {
     public class FuelPrice
     {
-        [Display(Name ="ფასი")]
         public string RompetrolPrice { get; set; }
-        [Display(Name ="ფასი")]
         public string GulfPrice { get; set; }
+        public string PortalPrice { get; set; }
+        public string OptimaPrice { get; set; }
+        public string SocarPrice { get; set; }
     }
 }
