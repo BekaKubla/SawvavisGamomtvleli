@@ -1,789 +1,759 @@
 ﻿@model IEnumerable<FuelProject.Models.FuelPrice>
-
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <style>
-            * {
-                margin: 0;
-                padding: 0;
-            }
-
-            .table-box {
-                margin: 50px auto;
-            }
-
-            .table-row {
-                display: table;
-                width: 80%;
-                margin: 10px auto;
-                font-family: sans-serif;
-                background: transparent;
-                padding: 12px 0;
-                color: #555;
-                font-size: 13px;
-                box-shadow: 0 1px 4px 0 rgba(0,0,50,0.3);
-            }
-
-            .table-cell {
-                display: table-cell;
-                width: 10%;
-                text-align: center;
-                padding: 4px 0;
-                border-right: 1px solid #d6d4d4;
-                vertical-align: middle;
-            }
-            .table-head{
-                background:#8665f7;
-                box-shadow:none;
-                color:#fff;
-                font-weight:600;
-            }
-            .table-head .table-cell{
-                border-right:none;
-            }
-            .last-cell{
-                border-right:none;
-            }
-
-        </style>
-</head>
-<body>
-    <div class="table-box">
-        <div class="table-row table-head">
-            <div class="table-cell">
-                <p>საწვავის დასახელება</p>
-            </div>
-            <div class="table-cell">
-                <p>Socar</p>
-            </div>
-            <div class="table-cell">
-                <p>Gulf</p>
-            </div>
-            <div class="table-cell">
-                <p>Rompetrol</p>
-            </div>
-            <div class="table-cell">
-                <p>Wissol</p>
-            </div>
-            <div class="table-cell">
-                <p>Lukoil</p>
-            </div>
-            <div class="table-cell">
-                <p>Portal</p>
-            </div>
-            <div class="table-cell">
-                <p>Optima</p>
-            </div>
+    <head>
+        <link href="~/css/Scraping.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>საწვავის დასახელება</th>
+                        <th>Socar</th>
+                        <th>Rompetrol</th>
+                        <th>Lukoil</th>
+                        <th>Gulf</th>
+                        <th>Portal</th>
+                        <th>Optima</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>რეგულარი</td>
+                        <td><h3>არ არის..</h3></td>
+                        <td><h3>არ არის..</h3></td>
+                        <td><h3>არ არის..</h3></td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.GulfPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.GulfPrice.Contains("regularri"))
+                                    {
+                                        <h4>@item.GulfPrice.Replace("regularri", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.PortalPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.PortalPrice.Contains("regularri"))
+                                    {
+                                        <h4>@item.PortalPrice.Replace("regularri", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td><h3>არ არის..</h3></td>
+                    </tr>
+                    <tr>
+                        <td>ევრო რეგულარი</td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.SocarPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.SocarPrice.Contains("evroregulari"))
+                                    {
+                                        <h4>@item.SocarPrice.Replace("evroregulari", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.RompetrolPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.RompetrolPrice.Contains("evroregulari"))
+                                    {
+                                        <h4>@item.RompetrolPrice.Replace("evroregulari", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.LukoilPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.LukoilPrice.Contains("evroregulari"))
+                                    {
+                                        <h4>@item.LukoilPrice.Replace("evroregulari", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.GulfPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.GulfPrice.Contains("evroregulari"))
+                                    {
+                                        <h4>@item.GulfPrice.Replace("evroregulari", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.PortalPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.PortalPrice.Contains("evroregulari"))
+                                    {
+                                        <h4>@item.PortalPrice.Replace("evroregulari", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.OptimaPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.OptimaPrice.Contains("evroregulari"))
+                                    {
+                                        <h4>@item.OptimaPrice.Replace("evroregulari", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>პრემიუმი</td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.SocarPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.SocarPrice.Contains("premiumi"))
+                                    {
+                                        <h4>@item.SocarPrice.Replace("premiumi", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.RompetrolPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.RompetrolPrice.Contains("evropremiumi"))
+                                    {
+                                        <h4>@item.RompetrolPrice.Replace("evropremiumi", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.LukoilPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.LukoilPrice.Contains("premiumi"))
+                                    {
+                                        <h4>@item.LukoilPrice.Replace("premiumi", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.GulfPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.GulfPrice.Contains("premiumi"))
+                                    {
+                                        <h4>@item.GulfPrice.Replace("premiumi", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.PortalPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.PortalPrice.Contains("premiumi"))
+                                    {
+                                        <h4>@item.PortalPrice.Replace("premiumi", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.OptimaPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.OptimaPrice.Contains("premiumi"))
+                                    {
+                                        <h4>@item.OptimaPrice.Replace("premiumi", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>სუპერი</td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.SocarPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.SocarPrice.Contains("superi"))
+                                    {
+                                        <h4>@item.SocarPrice.Replace("superi", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.RompetrolPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.RompetrolPrice.Contains("superi"))
+                                    {
+                                        <h4>@item.RompetrolPrice.Replace("superi", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.LukoilPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.LukoilPrice.Contains("ectosupperi"))
+                                    {
+                                        <h4>@item.LukoilPrice.Replace("ectosupperi", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.GulfPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.GulfPrice.Contains("superi"))
+                                    {
+                                        <h4>@item.GulfPrice.Replace("superi", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            <h3>არ არის..</h3>
+                        </td>
+                        <td>
+                            <h3>არ არის..</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>დიზელი</td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.SocarPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.SocarPrice.Contains("diseli"))
+                                    {
+                                        <h4>@item.SocarPrice.Replace("diseli", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.RompetrolPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.RompetrolPrice.Contains("diseli"))
+                                    {
+                                        <h4>@item.RompetrolPrice.Replace("diseli", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            <h3>არ არის..</h3>
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.GulfPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.GulfPrice.Contains("diseli"))
+                                    {
+                                        <h4>@item.GulfPrice.Replace("diseli", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.PortalPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.PortalPrice.Contains("diseli"))
+                                    {
+                                        <h4>@item.PortalPrice.Replace("diseli", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.OptimaPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.OptimaPrice.Contains("diseli"))
+                                    {
+                                        <h4>@item.OptimaPrice.Replace("diseli", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ევრო დიზელი</td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.SocarPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.SocarPrice.Contains("evrodizeli"))
+                                    {
+                                        <h4>@item.SocarPrice.Replace("evrodizeli", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.RompetrolPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.RompetrolPrice.Contains("evrodizeli"))
+                                    {
+                                        <h4>@item.RompetrolPrice.Replace("evrodizeli", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.LukoilPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.LukoilPrice.Contains("evrodizeli"))
+                                    {
+                                        <h4>@item.LukoilPrice.Replace("evrodizeli", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.GulfPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.GulfPrice.Contains("evrodizeli"))
+                                    {
+                                        <h4>@item.GulfPrice.Replace("evrodizeli", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.PortalPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.PortalPrice.Contains("evrodizeli"))
+                                    {
+                                        <h4>@item.PortalPrice.Replace("evrodizeli", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.OptimaPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.OptimaPrice.Contains("evrodizeli"))
+                                    {
+                                        <h4>@item.OptimaPrice.Replace("evrodizeli", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ბუნებრივი გაზი</td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.SocarPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.SocarPrice.Contains("CNG"))
+                                    {
+                                        <h4>@item.SocarPrice.Replace("CNG", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            <h3>არ არის..</h3>
+                        </td>
+                        <td>
+                            <h3>არ არის..</h3>
+                        </td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.GulfPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.GulfPrice.Contains("gazi"))
+                                    {
+                                        <h4>@item.GulfPrice.Replace("gazi", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            <h3>არ არის..</h3>
+                        </td>
+                        <td>
+                            <h3>არ არის..</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>პრემიუმი</td>
+                        <td>
+                            @foreach (var item in Model)
+                            {
+                                if (item.SocarPrice == null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    if (item.SocarPrice.Contains("LPG"))
+                                    {
+                                        <h4>@item.SocarPrice.Replace("LPG", "")</h4>
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            <h3>არ არის..</h3>
+                        </td>
+                        <td>
+                            <h3>არ არის..</h3>
+                        </td>
+                        <td>
+                            <h3>არ არის..</h3>
+                        </td>
+                        <td>
+                            <h3>არ არის..</h3>
+                        </td>
+                        <td>
+                            <h3>არ არის..</h3>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="table-row">
-            <div class="table-cell">
-                <p>სუპერი</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.SocarPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.SocarPrice.Contains("superi"))
-                        {
-                            <p>@item.SocarPrice.Replace("superi", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.GulfPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.GulfPrice.Contains("superi"))
-                        {
-                            <p>@item.GulfPrice.Replace("superi", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.RompetrolPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.RompetrolPrice.Contains("superi"))
-                        {
-                            <p>@item.RompetrolPrice.Replace("superi", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell  last-cell">
-                <p>არ არის..</p>
-            </div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">
-                <p>პრემიუმი</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.SocarPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.SocarPrice.Contains("premiumi"))
-                        {
-                            <p>@item.SocarPrice.Replace("premiumi", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.GulfPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.GulfPrice.Contains("premiumi"))
-                        {
-                            <p>@item.GulfPrice.Replace("premiumi", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.RompetrolPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.RompetrolPrice.Contains("evropremiumi"))
-                        {
-                            <p>@item.RompetrolPrice.Replace("evropremiumi", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.PortalPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.PortalPrice.Contains("premiumi"))
-                        {
-                            <p>@item.PortalPrice.Replace("premiumi", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell  last-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.OptimaPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.OptimaPrice.Contains("premiumi"))
-                        {
-                            <p>@item.OptimaPrice.Replace("premiumi", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">
-                <p>ევრო რეგულარი</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.SocarPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.SocarPrice.Contains("evroregulari"))
-                        {
-                            <p>@item.SocarPrice.Replace("evroregulari", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.GulfPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.GulfPrice.Contains("evroregulari"))
-                        {
-                            <p>@item.GulfPrice.Replace("evroregulari", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.RompetrolPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.RompetrolPrice.Contains("evroregulari"))
-                        {
-                            <p>@item.RompetrolPrice.Replace("evroregulari", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.PortalPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.PortalPrice.Contains("evroregulari"))
-                        {
-                            <p>@item.PortalPrice.Replace("evroregulari", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell  last-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.OptimaPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.OptimaPrice.Contains("evroregulari"))
-                        {
-                            <p>@item.OptimaPrice.Replace("evroregulari", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">
-                <p>რეგულარი</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.SocarPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.SocarPrice.Contains("regularri"))
-                        {
-                            <p>@item.SocarPrice.Replace("regularri", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.GulfPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.GulfPrice.Contains("regularri"))
-                        {
-                            <p>@item.GulfPrice.Replace("regularri", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.PortalPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.PortalPrice.Contains("regularri"))
-                        {
-                            <p>@item.PortalPrice.Replace("regularri", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell  last-cell">
-                <p>არ არის..</p>
-            </div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">
-                <p>ევრო დიზელი</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.SocarPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.SocarPrice.Contains("evrodizeli"))
-                        {
-                            <p>@item.SocarPrice.Replace("evrodizeli", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.GulfPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.GulfPrice.Contains("evrodizeli"))
-                        {
-                            <p>@item.GulfPrice.Replace("evrodizeli", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.RompetrolPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.RompetrolPrice.Contains("evrodizeli"))
-                        {
-                            <p>@item.RompetrolPrice.Replace("evrodizeli", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.PortalPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.PortalPrice.Contains("evrodizeli"))
-                        {
-                            <p>@item.PortalPrice.Replace("evrodizeli", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell  last-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.OptimaPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.OptimaPrice.Contains("evrodizeli"))
-                        {
-                            <p>@item.OptimaPrice.Replace("evrodizeli", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">
-                <p>დიზელი</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.SocarPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.SocarPrice.Contains("diseli"))
-                        {
-                            <p>@item.SocarPrice.Replace("diseli", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.GulfPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.GulfPrice.Contains("diseli"))
-                        {
-                            <p>@item.GulfPrice.Replace("diseli", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.RompetrolPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.RompetrolPrice.Contains("diseli"))
-                        {
-                            <p>@item.RompetrolPrice.Replace("diseli", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.PortalPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.PortalPrice.Contains("diseli"))
-                        {
-                            <p>@item.PortalPrice.Replace("diseli", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell  last-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.OptimaPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.OptimaPrice.Contains("diseli"))
-                        {
-                            <p>@item.OptimaPrice.Replace("diseli", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">
-                <p>ბუნებრივი გაზი</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.SocarPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.SocarPrice.Contains("CNG"))
-                        {
-                            <p>@item.SocarPrice.Replace("CNG", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.GulfPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.GulfPrice.Contains("gazi"))
-                        {
-                            <p>@item.GulfPrice.Replace("gazi", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell  last-cell">
-                <p>არ არის..</p>
-            </div>
-        </div>
-        <div class="table-row">
-            <div class="table-cell">
-                <p>თხევადი გაზი</p>
-            </div>
-            <div class="table-cell">
-                @foreach (var item in Model)
-                {
-                    if (item.SocarPrice == null)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (item.SocarPrice.Contains("LPG"))
-                        {
-                            <p>@item.SocarPrice.Replace("LPG", "")</p>
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                }
-            </div>
-            <div class="table-cell">
-                <p>არ არის...</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell">
-                <p>არ არის..</p>
-            </div>
-            <div class="table-cell  last-cell">
-                <p>არ არის..</p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+    </body>

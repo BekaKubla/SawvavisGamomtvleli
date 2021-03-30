@@ -1,0 +1,55 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("https://wallpaperaccess.com/full/3977712.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    font-family: sans-serif;
+}
+h3{
+    color:red;
+    text-decoration-line:line-through;
+}
+
+.table-container {
+    padding: 0 10%;
+    margin: 40px auto 0;
+}
+
+.table {
+    opacity: 0.88;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table thead {
+        background-color: #ee2828;
+    }
+
+        .table thead tr th {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.35px;
+            color: white;
+            opacity: 1;
+            padding: 12px;
+            vertical-align: top;
+            border: 1px solid #dee2e685;
+        }
+
+    .table tbody tr td {
+        font-size: 14px;
+        letter-spacing: 0.35px;
+        font-weight: normal;
+        color: #f1f1f1;
+        background-color: #3c3f44;
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #dee2e685;
+    }

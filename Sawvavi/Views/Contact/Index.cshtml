@@ -1,0 +1,59 @@
+﻿@model FuelProject.Models.Contact
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <meta charset="utf-8">
+    <link href="~/css/Contact.css" rel="stylesheet" />
+</head>
+<body>
+    <form asp-controller="contact"asp-action="index"method="post">
+        <div class="background">
+            <div class="container">
+                <div class="screen">
+                    <div class="screen-header">
+                        <div class="screen-header-left">
+                            <div class="screen-header-button close"></div>
+                            <div class="screen-header-button maximize"></div>
+                            <div class="screen-header-button minimize"></div>
+                        </div>
+                        <div class="screen-header-right">
+                            <div class="screen-header-ellipsis"></div>
+                            <div class="screen-header-ellipsis"></div>
+                            <div class="screen-header-ellipsis"></div>
+                        </div>
+                    </div>
+                    <div class="screen-body">
+                        <div class="screen-body-item left">
+                            <div class="app-title">
+                                <span>კონტაქტი</span>
+                            </div>
+                            <div class="app-contact">საკონტაქტო ელ-ფოსტა : Beka@mail.ru</div>
+                        </div>
+                        <div class="screen-body-item">
+                            <div class="app-form">
+                                <div class="app-form-group">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                    <input type="text" asp-for="Name" class="app-form-control" placeholder="სახელი">
+                                </div>
+                                <div class="app-form-group">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                    <input type="text" asp-for="Mail" class="app-form-control" placeholder="ელ-ფოსტა">
+                                </div>
+                                <div class="app-form-group message">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                    <input type="text" asp-for="Subject" class="app-form-control" placeholder="შეტყობინება">
+                                </div>
+                                <div class="app-form-group buttons">
+                                    <button type="submit" class="app-form-button">გაგზავნა</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>

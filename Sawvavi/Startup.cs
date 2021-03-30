@@ -35,11 +35,12 @@ namespace FuelProject
 
             app.UseRouting();
             app.UseMvcWithDefaultRoute();
+            app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Scraping}/{action=index}");
+                    pattern: "{controller=Fuel}/{action=MapAndGasoline}");
             });
 
         }

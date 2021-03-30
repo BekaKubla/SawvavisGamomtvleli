@@ -13,5 +13,6 @@ namespace FuelProject.Models
         public string PortalPrice { get; set; }
         public string OptimaPrice { get; set; }
         public string SocarPrice { get; set; }
+        public string LukoilPrice { get; set; }
     }
 }

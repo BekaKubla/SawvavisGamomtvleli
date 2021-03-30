@@ -1,27 +1,61 @@
-﻿*{
-    margin:0;
-    padding:0;
+﻿body {
+    background-image: url(http://farm1.staticflickr.com//447//19585243302_fae38fd86f_o.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: auto;
+    height: auto;
+    color: darkgray;
+    font-size: 20px;
+    text-align: center
 }
-.table-box{
-    margin:50px auto;
+#myMap {
+    opacity: .65;
+    object-fit: scale-down;
+    position: relative;
+    top: 6px;
+    margin: auto;
+    width: 60%;
+    padding: 230px;
 }
-.table-row{
-    display: table;
-    width: 80%;
-    margin: 10px auto;
-    font-family: sans-serif;
-    background: transparent;
-    padding: 12px 0;
-    color: #555;
-    font-size: 13px;
-    box-shadow: 0 1px 4px 0 rgba(0,0,50,0.3);
-}
-.table-cell{
-    display:table-cell;
-    width:30%;
-    text-align:center;
-    padding:4px 0;
-    border-right:1px solid #d6d4d4;
-    vertical-align:middle;
 
+#myMap:hover {
+   opacity: 1
 }
+
+input {
+    border: none;
+    outline:none;
+    text-align: center;
+    background-color: transparent;
+    color: #fff;
+    width: 10%;
+    font-size: medium;
+    border-bottom: 1px solid darkgray;
+}
+
+#myMap {
+    opacity: .65;
+    margin: auto;
+    width: 60%;
+    padding: 230px;
+    border-radius: 8px
+}
+
+    #myMap:hover {
+        opacity: 1
+    }
+
+input[type=button] {
+    background-color: transparent;
+    font-size: 23px;
+    text-decoration: none;
+    border: medium;
+    color: green
+}
+@media screen and (max-width: 600px) {
+    input{
+        width:30%;
+    }
+}
+

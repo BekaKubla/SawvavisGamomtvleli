@@ -1,51 +1,71 @@
 ﻿<!DOCTYPE html>
 <html>
-<div style="text-align:center">საიდან : <input id="fromTbx" placeholder="ჩაწერეთ ქალაქი"> სად :<input id="toTbx" placeholder="ჩაწერეთ ქალაქი"> მანქანის წვა : <input id="burningGasoline" step="any" type="number" placeholder="მანქანის წვა" class="col-lg-2"> <input type="button" onclick="GetDirections()" value="გამოთვლა"></div>
 <head>
-    <style>
-        body {
-            background-image: url(https://wallpaperaccess.com/full/1129092.jpg);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            width: auto;
-            height: auto;
-            color: #fff;
-            font-size: 20px;
-            text-align: center
-        }
-
-        input {
-            background-color: transparent;
-            color: #fff
-        }
-
-        #myMap {
-            opacity: .65;
-            margin: auto;
-            width: 60%;
-            padding: 230px;
-            border-radius: 8px
-        }
-
-            #myMap:hover {
-                opacity: 1
-            }
-
-        input[type=button] {
-            background-color: transparent;
-            font-size: 23px;
-            text-decoration: none;
-            border: none;
-            color: green
-        }
-    </style>
+    <link href="~/css/Site.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
     <title></title>
     <meta charset="utf-8">
-    <script type="text/javascript">function GetMap() { map = new Microsoft.Maps.Map("#myMap", {}), Microsoft.Maps.loadModule("Microsoft.Maps.Directions", function () { directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map), directionsManager.setRenderOptions({ itineraryContainer: "#directionsItinerary" }), directionsManager.showInputPanel("directionsPanel"), directionsManager.setRequestOptions({ routeMode: Microsoft.Maps.Directions.RouteMode.driving }) }) } function GetDirections() { directionsManager.clearAll(), directionsManager.clearDisplay(); var e = new Microsoft.Maps.Directions.Waypoint({ address: document.getElementById("fromTbx").value }); directionsManager.addWaypoint(e); var i = new Microsoft.Maps.Directions.Waypoint({ address: document.getElementById("toTbx").value }); directionsManager.addWaypoint(i), Microsoft.Maps.Events.addHandler(directionsManager, "directionsError", directionsError), Microsoft.Maps.Events.addHandler(directionsManager, "directionsUpdated", directionsUpdated), directionsManager.calculateDirections() } function directionsUpdated(e) { var i = directionsManager.getRequestOptions().routeIndex, n = Math.round(100 * e.routeSummary[i].distance) / 100, t = directionsManager.getRequestOptions().distanceUnit, r = ""; t == Microsoft.Maps.Directions.DistanceUnit.km && (r = "km"); var o = document.getElementById("burningGasoline").value, a = 100 / o, s = n / a; s = s.toFixed(1); var d = Math.round(e.routeSummary[i].timeWithTraffic / 60); document.getElementById("routeInfoPanel").innerHTML = "მანძილი: " + n + " " + r + "<br/>დრო მანძილის დასაფარად: " + d + " წუთი<br/>მანძილისი დასაფარად საწვავის რაოდენობა : " + s + " ლიტრი" } function directionsError(e) { alert("შეცდომააა!!! გადაამოწმეთ შეყვანილი ინფორმაცია ") } var map, directionsManager;</script>
-    <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AkC0sJoPfLbvE3feNBAKiBct4hMbvJ5Knhoc6rvg32VLNOb_GvZXrjqh-0VRX5jB" async defer></script>
 </head>
 <body>
+    <script type="text/javascript">
+        function GetMap() {
+            map = new Microsoft.Maps.Map("#myMap", {}), Microsoft.Maps.loadModule("Microsoft.Maps.Directions", function () {
+                directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map), directionsManager.setRenderOptions({
+                    itineraryContainer: "#directionsItinerary"
+                }), directionsManager.showInputPanel("directionsPanel"), directionsManager.setRequestOptions({
+                    routeMode: Microsoft.Maps.Directions.RouteMode.driving
+                })
+            })
+        }
+
+        function GetDirections() {
+            directionsManager.clearAll(), directionsManager.clearDisplay();
+            var e = new Microsoft.Maps.Directions.Waypoint({
+                address: document.getElementById("fromTbx").value
+            });
+            directionsManager.addWaypoint(e);
+            var i = new Microsoft.Maps.Directions.Waypoint({
+                address: document.getElementById("toTbx").value
+            });
+            directionsManager.addWaypoint(i), Microsoft.Maps.Events.addHandler(directionsManager, "directionsError", directionsError), Microsoft.Maps.Events.addHandler(directionsManager, "directionsUpdated", directionsUpdated), directionsManager.calculateDirections()
+        }
+
+        function directionsUpdated(e) {
+            var i = directionsManager.getRequestOptions().routeIndex,
+                n = Math.round(100 * e.routeSummary[i].distance) / 100,
+                t = directionsManager.getRequestOptions().distanceUnit,
+                r = "";
+            t == Microsoft.Maps.Directions.DistanceUnit.km && (r = "km");
+            var o = document.getElementById("burningGasoline").value,
+                a = 100 / o,
+                s = n / a;
+            s = s.toFixed(1);
+            var d = Math.round(e.routeSummary[i].timeWithTraffic / 60);
+            document.getElementById("routeInfoPanel").innerHTML = "<br/>მანძილი: " + n + " " + r + " <br/>მანძილის დასაფარად საწვავის რაოდენობა : " + s + " ლიტრი<br/>"
+        }
+
+        function directionsError(e) {
+            alert("შეცდომააა!!! გადაამოწმეთ შეყვანილი ინფორმაცია ")
+        }
+        var map, directionsManager;
+    </script>
+    <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AkC0sJoPfLbvE3feNBAKiBct4hMbvJ5Knhoc6rvg32VLNOb_GvZXrjqh-0VRX5jB" async defer></script>
+    <h1></h1>
+    <h1></h1>
     <div id="myMap"></div><div id="routeInfoPanel"></div>
+    <div>
+            <h1></h1>
+            <h1></h1>
+            <div>
+                საიდან <input type="text" id="fromTbx" autocomplete="off" placeholder="ჩაწერეთ ქალაქი" />
+            </div>
+            <div>
+                  სად <input type="text" id="toTbx" autocomplete="off" placeholder="ჩაწერეთ ქალაქი" />
+            </div>
+            <div>
+               მანქანის წვა <input id="burningGasoline" step="any" type="number" placeholder="მანქანის წვა">
+            </div>
+            <input type="button" onclick="GetDirections()" value="გამოთვლა">
+        </div>
 </body>
 </html>

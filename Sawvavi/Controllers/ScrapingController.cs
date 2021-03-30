@@ -1,6 +1,8 @@
 ﻿using FuelProject.Models;
 using HtmlAgilityPack;
 using Microsoft.AspNetCore.Mvc;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -166,6 +168,39 @@ namespace FuelProject.Controllers
             fuels[27].SocarPrice = fuels[27].SocarPrice + "evrodizeli";
             fuels[28].SocarPrice = fuels[28].SocarPrice + "LPG";
             fuels[29].SocarPrice = fuels[29].SocarPrice + "CNG";
+
+
+            //lukoil scraping
+            var lukoilUrl = "http://www.lukoil.ge/index.php?m=300";
+
+            var lukoilHttpClient = new HttpClient();
+            var lukoilHtml = await optimaHttpClient.GetStringAsync(lukoilUrl);
+            var lukoilHtmlDocument = new HtmlDocument();
+
+            lukoilHtmlDocument.LoadHtml(lukoilHtml);
+
+            var lukoilProductsHtml = lukoilHtmlDocument.DocumentNode.Descendants("div")
+                       .Where(node => node.GetAttributeValue("id", "")
+                       .Contains("wrap1")).ToList();
+
+            var lukoilProductList = lukoilProductsHtml[0].Descendants("tr")
+                                   .Where(o => o.InnerText.Contains("1:") || o.InnerText.Contains("2:") || o.InnerText.Contains("3:"));
+
+            foreach(var item in lukoilProductList)
+            {
+                fuels.Add(new FuelPrice
+                {
+                    LukoilPrice = item.InnerText.ToString().Trim()
+                });
+            }
+
+            fuels[30].LukoilPrice = fuels[30].LukoilPrice.Replace(":",".") + "ectosupperi";
+            fuels[31].LukoilPrice = fuels[31].LukoilPrice.Replace(":", ".") + "superi";
+            fuels[32].LukoilPrice = fuels[32].LukoilPrice.Replace(":", ".") + "premiumi";
+            fuels[33].LukoilPrice = fuels[33].LukoilPrice.Replace(":", ".") + "evroregulari";
+            fuels[34].LukoilPrice = fuels[34].LukoilPrice.Replace(":", ".") + "evrodizeli";
+
+
             return View(fuels);
         }
     }
