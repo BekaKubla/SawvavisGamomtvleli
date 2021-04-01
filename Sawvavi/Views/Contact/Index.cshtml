@@ -9,7 +9,7 @@
     <link href="~/css/Contact.css" rel="stylesheet" />
 </head>
 <body>
-    <form asp-controller="contact"asp-action="index"method="post">
+    <form asp-controller="contact" asp-action="index" method="post">
         <div class="background">
             <div class="container">
                 <div class="screen">
@@ -35,16 +35,16 @@
                         <div class="screen-body-item">
                             <div class="app-form">
                                 <div class="app-form-group">
-                                    <span asp-validation-for="Name" class="text-danger"></span>
-                                    <input type="text" asp-for="Name" class="app-form-control" placeholder="სახელი">
+                                    <span style="color:red" asp-validation-for="Name" class="text-danger"></span>
+                                    <input type="text" asp-for="Name" class="app-form-control" autocomplete="off" placeholder="სახელი">
                                 </div>
                                 <div class="app-form-group">
-                                    <span asp-validation-for="Name" class="text-danger"></span>
-                                    <input type="text" asp-for="Mail" class="app-form-control" placeholder="ელ-ფოსტა">
+                                    <span style="color:red" asp-validation-for="Name"></span>
+                                    <input type="text" asp-for="Mail" class="app-form-control" autocomplete="off" placeholder="ელ-ფოსტა">
                                 </div>
                                 <div class="app-form-group message">
-                                    <span asp-validation-for="Name" class="text-danger"></span>
-                                    <input type="text" asp-for="Subject" class="app-form-control" placeholder="შეტყობინება">
+                                    <span style="color:red" asp-validation-for="Name" class="text-danger"></span>
+                                    <input type="text" asp-for="Subject" class="app-form-control" autocomplete="off" placeholder="შეტყობინება">
                                 </div>
                                 <div class="app-form-group buttons">
                                     <button type="submit" class="app-form-button">გაგზავნა</button>

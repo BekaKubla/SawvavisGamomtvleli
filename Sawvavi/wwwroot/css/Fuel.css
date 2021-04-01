@@ -9,23 +9,24 @@
     font-size: 20px;
     text-align: center
 }
+
 #myMap {
     opacity: .65;
     object-fit: scale-down;
     position: relative;
-    top: 6px;
+    top: 3px;
     margin: auto;
-    width: 60%;
-    padding: 230px;
+    width: 40%;
+    padding: 150px;
 }
 
-#myMap:hover {
-   opacity: 1
-}
+    #myMap:hover {
+        opacity: 1
+    }
 
 input {
     border: none;
-    outline:none;
+    outline: none;
     text-align: center;
     background-color: transparent;
     color: #fff;
@@ -37,8 +38,8 @@ input {
 #myMap {
     opacity: .65;
     margin: auto;
-    width: 60%;
-    padding: 230px;
+    width: 40%;
+    padding: 150px;
     border-radius: 8px
 }
 
@@ -53,9 +54,9 @@ input[type=button] {
     border: medium;
     color: green
 }
+
 @media screen and (max-width: 600px) {
-    input{
-        width:30%;
+    input {
+        width: 40%;
     }
 }
-

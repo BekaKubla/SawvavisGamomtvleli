@@ -11,6 +11,7 @@ namespace FuelProject.Models
         [Required(ErrorMessage = "ველის შევსება აუცილებელია")]
         public string Name { get; set; }
         [Required(ErrorMessage = "ველის შევსება აუცილებელია")]
+        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "ელ-ფოსტის ფორმატი არასწორია")]
         public string Mail { get; set; }
         [Required(ErrorMessage = "ველის შევსება აუცილებელია")]
         public string Subject { get; set; }

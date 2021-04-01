@@ -40,7 +40,7 @@ namespace FuelProject
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Fuel}/{action=MapAndGasoline}");
+                    pattern: "{controller=ganbajeba}/{action=Index}");
             });
 
         }
