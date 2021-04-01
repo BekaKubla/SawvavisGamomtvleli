@@ -13,5 +13,7 @@ namespace FuelProject.Models
         public double Gadasaxadi { get; set; }
         public string AqciziInString { get; set; }
         public string GadasaxadiInString { get; set; }
+        public bool IsHybrid { get; set; }
+        public bool IsRight { get; set; }
     }
 }

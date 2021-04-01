@@ -41,6 +41,11 @@ namespace FuelProject.Controllers
                 ganbajeba.Aqcizi = 0.8 * Convert.ToDouble(ganbajeba.Size) * 1000;
                 ganbajeba.AqciziInString = string.Format("{0:0}", ganbajeba.Aqcizi);
             }
+            else if (ganbajeba.Year == 2012)
+            {
+                ganbajeba.Aqcizi = 0.9 * Convert.ToDouble(ganbajeba.Size) * 1000;
+                ganbajeba.AqciziInString = string.Format("{0:0}", ganbajeba.Aqcizi);
+            }
             else if (ganbajeba.Year == 2011)
             {
                 ganbajeba.Aqcizi = 1.1 * Convert.ToDouble(ganbajeba.Size) * 1000;
@@ -95,6 +100,25 @@ namespace FuelProject.Controllers
                 ganbajeba.GadasaxadiInString=string.Format("{0:0}", ganbajeba.Gadasaxadi);
             }
         }
+        private static void HybridAndRight(Ganbajeba ganbajeba)
+        {
+            if (ganbajeba.IsHybrid == true && ganbajeba.IsRight == true || ganbajeba.IsHybrid == true || ganbajeba.IsRight == true)
+            {
+                if (ganbajeba.IsHybrid == true && ganbajeba.IsRight == true || ganbajeba.IsRight == true)
+                {
+                    ganbajeba.Aqcizi = ganbajeba.Aqcizi * 3;
+                    ganbajeba.AqciziInString = string.Format("{0:0}", ganbajeba.Aqcizi);
+                }
+                else if (ganbajeba.IsHybrid == true)
+                {
+                    if (ganbajeba.Year >= 2015)
+                    {
+                        ganbajeba.Aqcizi = ganbajeba.Aqcizi - (ganbajeba.Aqcizi * 0.6);
+                        ganbajeba.AqciziInString = string.Format("{0:0}", ganbajeba.Aqcizi);
+                    }
+                }
+            }
+        }
         [HttpGet]
         public IActionResult Index()
         {
@@ -108,6 +132,7 @@ namespace FuelProject.Controllers
             {
                 Aqcizi(ganbajeba);
                 Gadasaxadi(ganbajeba);
+                HybridAndRight(ganbajeba);
                 return RedirectToAction("Result");
             }
             SizeYear();

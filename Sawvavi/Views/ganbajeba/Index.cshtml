@@ -16,6 +16,16 @@
         <span asp-validation-for="Year"class="text-danger"></span>
     </div>
     <div>
+        <label>
+            @Html.CheckBox("IsHybrid", false)
+            ჰიბრიდი
+        </label>
+        <label>
+            @Html.CheckBox("IsRight", false)
+            მარჯვენა საჭე
+        </label>
+    </div>
+    <div>
         <button type="submit"value="add" asp-for="Sum">გაგზავნა</button>
     </div>
 </form>
