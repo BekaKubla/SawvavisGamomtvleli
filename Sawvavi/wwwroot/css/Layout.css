@@ -10,6 +10,7 @@ body {
 }
 
 nav {
+    background-color:transparent;
     position: center;
     top: 50%;
     right: 0;

@@ -1,0 +1,72 @@
+﻿@model FuelProject.Models.Ganbajeba
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *,FuelProject
+<link href="~/css/Ganbajeba.css" rel="stylesheet" />
+<link href="~/css/Footer.css" rel="stylesheet" />
+<form asp-controller="ganbajeba" asp-action="ganbajeba" method="post">
+    <div class="box">
+        <span>ძრავის მოცულობა</span>
+        <select asp-for="Size" asp-items="new SelectList(ViewBag.sizeList)">
+        </select>
+    </div>
+    <div class="box-two">
+        <span>გამოშვების წელი</span>
+        <select asp-for="Year" asp-items="new SelectList(ViewBag.yearList)">
+        </select>
+    </div>
+    <label class="container">
+        ჰიბრიდი
+        <input type="checkbox" data-val="true" id="IsHybrid" name="IsHybrid" value="true" />
+        <input name="IsHybrid" type="hidden" value="false" />
+    </label>
+    <label class="container-two">
+        საჭე მარჯვნივ/გადატანილი
+        <input type="checkbox" data-val="true" id="IsRight" name="IsRight" value="true" />
+        <input name="IsRight" type="hidden" value="false" />
+    </label>
+    <div>
+        @if (Model.GadasaxadiInString == null)
+        {
+            //Nothing
+        }
+        else
+        {
+        <div class="sabajo">
+            <h3>საბაჟო მომსახურეობის გადასახადი : 150₾</h3>
+        </div>
+        <div class="eqsperti">
+            <h3>ექსპერტის შეფასება : 20₾</h3>
+        </div>
+        <div class="deklaracia">
+            <h3>საბაჟო დეკლარაცია : 30₾</h3>
+        </div>
+        <div class="importi">
+            <h3>იმპორტის გადასახადი : @ViewBag.Gadasaxadi₾</h3>
+        </div>
+        <div class="akcizi">
+            <h3>აქციზი : @ViewBag.Aqcizi₾</h3>
+        </div>
+        <div class="jami">
+            <h3 style="color:green">სულ</h3>
+            <h3 style="color:red">₾@ViewBag.Jami</h3>
+            <h3></h3>
+            <h3 style="color:red">@ViewBag.JamiInUSD</h3>
+        </div>
+        <div class="img">
+            <img src="https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-circle-frame-3.png"width="370"height="370" />
+        </div>
+        }
+    </div>
+    <button class="rounder" type="submit">გამოთვლა</button>
+</form>
+<div class="footer">
+    <div id="button"></div>
+    <div id="container">
+        <div id="cont">
+            <div class="footer_center">
+                <h3><a asp-controller="contact"asp-action="index">კონტაქტი</a></h3>
+            </div>
+        </div>
+    </div>
+</div>
+

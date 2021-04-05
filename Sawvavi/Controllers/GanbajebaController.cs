@@ -1,7 +1,10 @@
 ﻿using FuelProject.Models;
 using Microsoft.AspNetCore.Mvc;
+using NET.Core.NBG.Service.API.Client;
+using NET.Core.NBG.Service.API.Client.Operations;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -92,6 +95,7 @@ namespace FuelProject.Controllers
             if (ganbajeba.Year == 2021)
             {
                 ganbajeba.Gadasaxadi = (Convert.ToDouble(ganbajeba.Size) * 1000 * 0.05);
+                ganbajeba.GadasaxadiInString = string.Format("{0:0}", ganbajeba.Gadasaxadi);
             }
             else
             {
@@ -120,23 +124,39 @@ namespace FuelProject.Controllers
             }
         }
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Ganbajeba()
         {
             SizeYear();
-            return View();
+            return View(new Ganbajeba());
         }
         [HttpPost]
-        public IActionResult Index(Ganbajeba ganbajeba)
+        public async Task<IActionResult> Ganbajeba(Ganbajeba ganbajeba)
         {
             if (ModelState.IsValid)
             {
                 Aqcizi(ganbajeba);
                 Gadasaxadi(ganbajeba);
                 HybridAndRight(ganbajeba);
-                return RedirectToAction("Result");
+                ganbajeba.Jami = ganbajeba.Aqcizi + ganbajeba.Gadasaxadi;
+                ganbajeba.JamiInString = string.Format("{0:0}", ganbajeba.Jami);
+                SizeYear();
+                ViewBag.Aqcizi = ganbajeba.AqciziInString;
+                ViewBag.Gadasaxadi = ganbajeba.GadasaxadiInString;
+                ViewBag.Jami = ganbajeba.JamiInString;
+                using (var nbpClient=new NbgApiClient())
+                {
+                    var getCurrencyResponse = await nbpClient.GetCurrencyAsync(new GetCurrency.Request { Code = CurrencyCode.USD });
+                    ganbajeba.CurrecyUSD = Convert.ToDouble(getCurrencyResponse.Rate);
+                    ganbajeba.JamiInUSD = ganbajeba.Jami / ganbajeba.CurrecyUSD;
+                    ganbajeba.JamiUSDInString = string.Format("{0:C2}", ganbajeba.JamiInUSD);
+                    ViewBag.JamiInUSD = ganbajeba.JamiUSDInString;
+                }
+                return View(ganbajeba);
             }
             SizeYear();
-            return View();
+            return View(ganbajeba);
         }
+
+
     }
 }

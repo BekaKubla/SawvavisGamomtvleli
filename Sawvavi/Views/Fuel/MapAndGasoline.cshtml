@@ -41,7 +41,7 @@
                 s = n / a;
             s = s.toFixed(1);
             var d = Math.round(e.routeSummary[i].timeWithTraffic / 60);
-            document.getElementById("routeInfoPanel").innerHTML = "<br/>მანძილი: " + n + " " + r + " <br/>მანძილის დასაფარად საწვავის რაოდენობა : " + s + " ლიტრი<br/>"
+            document.getElementById("routeInfoPanel").innerHTML = "<br/>მანძილი: " + n + " " + r + " <br/>საწვავის რაოდენობა : " + s + " ლიტრი<br/>"
         }
 
         function directionsError(e) {
@@ -56,14 +56,14 @@
     <div>
             <h1></h1>
             <h1></h1>
-            <div>
-                საიდან <input type="text" id="fromTbx" autocomplete="off" placeholder="ჩაწერეთ ქალაქი" />
+            <div class="from">
+               საიდან <input type="text" id="fromTbx" autocomplete="off" placeholder="ჩაწერეთ ქალაქი" />
             </div>
-            <div>
+            <div class="to">
                   სად <input type="text" id="toTbx" autocomplete="off" placeholder="ჩაწერეთ ქალაქი" />
             </div>
-            <div>
-               მანქანის წვა <input id="burningGasoline" step="any" type="number" placeholder="მანქანის წვა">
+            <div class="burn">
+               მანქანის წვა <input id="burningGasoline" step="any" type="number" placeholder="წვა 100 კმ-ზე">
             </div>
             <input type="button" onclick="GetDirections()" value="გამოთვლა">
         </div>

@@ -8,6 +8,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
     <_PublishTargetUrl>ftp://mandzili-georgia.somee.com/www.mandzili-georgia.somee.com/www.mandzili-georgia.somee.com</_PublishTargetUrl>
+    <History>True|2021-04-04T10:20:46.1078471Z;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
@@ -71,25 +72,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="FuelProject.deps.json">
-      <publishTime>03/29/2021 17:34:12</publishTime>
+      <publishTime>04/04/2021 14:15:30</publishTime>
     </File>
     <File Include="FuelProject.dll">
-      <publishTime>03/29/2021 17:34:03</publishTime>
+      <publishTime>04/04/2021 14:15:28</publishTime>
     </File>
     <File Include="FuelProject.exe">
-      <publishTime>03/29/2021 17:34:03</publishTime>
+      <publishTime>04/04/2021 14:15:28</publishTime>
     </File>
     <File Include="FuelProject.pdb">
-      <publishTime>03/29/2021 17:34:03</publishTime>
+      <publishTime>04/04/2021 14:15:28</publishTime>
     </File>
     <File Include="FuelProject.runtimeconfig.json">
-      <publishTime>03/26/2021 15:54:43</publishTime>
+      <publishTime>04/04/2021 14:15:30</publishTime>
     </File>
     <File Include="FuelProject.Views.dll">
-      <publishTime>03/29/2021 17:34:04</publishTime>
+      <publishTime>04/04/2021 14:15:30</publishTime>
     </File>
     <File Include="FuelProject.Views.pdb">
-      <publishTime>03/29/2021 17:34:04</publishTime>
+      <publishTime>04/04/2021 14:15:30</publishTime>
     </File>
     <File Include="HtmlAgilityPack.dll">
       <publishTime>03/03/2021 04:31:10</publishTime>
@@ -248,16 +249,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>03/29/2021 17:34:12</publishTime>
+      <publishTime>04/04/2021 14:15:40</publishTime>
     </File>
     <File Include="WebDriver.dll">
       <publishTime>10/31/2018 09:53:56</publishTime>
     </File>
     <File Include="wwwroot/css/Contact.css">
-      <publishTime>03/27/2021 16:17:39</publishTime>
+      <publishTime>03/30/2021 17:17:02</publishTime>
+    </File>
+    <File Include="wwwroot/css/Fuel.css">
+      <publishTime>04/04/2021 12:00:16</publishTime>
+    </File>
+    <File Include="wwwroot/css/Ganbajeba.css">
+      <publishTime>04/04/2021 10:51:23</publishTime>
     </File>
     <File Include="wwwroot/css/Layout.css">
-      <publishTime>03/29/2021 17:01:33</publishTime>
+      <publishTime>04/03/2021 12:05:41</publishTime>
     </File>
     <File Include="wwwroot/css/LayOutt.css">
       <publishTime>03/29/2021 17:29:13</publishTime>
@@ -266,7 +273,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/29/2021 16:46:14</publishTime>
     </File>
     <File Include="wwwroot/css/Scraping.css">
-      <publishTime>03/25/2021 16:49:51</publishTime>
+      <publishTime>04/04/2021 12:08:49</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
       <publishTime>03/27/2021 20:53:13</publishTime>

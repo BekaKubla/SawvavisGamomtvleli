@@ -24,8 +24,8 @@ namespace FuelProject.Controllers
                 return View();
             }
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress(contact.Mail, "infopcmarketgeo@gmail.com"));
-            message.To.Add(new MailboxAddress(contact.Subject, "infopcmarketgeo@gmail.com"));
+            message.From.Add(new MailboxAddress(contact.Mail, "infomandzili@gmail.com"));
+            message.To.Add(new MailboxAddress(contact.Subject, "infomandzili@gmail.com"));
             message.Subject = contact.Subject;
             message.Body = new TextPart("plain")
             {
@@ -34,7 +34,7 @@ namespace FuelProject.Controllers
             using(var client=new SmtpClient())
             {
                 client.Connect("smtp.gmail.com", 587, false);
-                client.Authenticate("infopcmarketgeo@gmail.com", "87*z7>YMH~>aPuR>");
+                client.Authenticate("infomandzili@gmail.com", "nhv~fL'$^6wPV6&P");
                 client.Send(message);
                 client.Disconnect(true);
             }

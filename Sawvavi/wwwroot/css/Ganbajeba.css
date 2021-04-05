@@ -1,0 +1,332 @@
+﻿
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://i0.wp.com/twinpixelvideo.com/wp-content/uploads/2015/04/gradient-wallpapers-desktop-gradient-grey-wallpaper-generator-iphone-5-android-maker-wallpapers-hd-ios-7-deviantart-ipad.jpg?fit=1920%2C1200&ssl=1");
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.box {
+    position: absolute;
+    top: 17%;
+    left: 32.5%;
+    transform: translate(-50%, -50%);
+}
+
+    .box select {
+        background-color: darkslateblue;
+        color: white;
+        padding: 12px;
+        width: 250px;
+        border: none;
+        font-size: 20px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        -webkit-appearance: button;
+        outline: none;
+    }
+
+    .box::before {
+        font-family: FontAwesome;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        font-size: 28px;
+        line-height: 45px;
+        color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.1);
+        pointer-events: none;
+    }
+
+    .box:hover::before {
+        color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .box select option {
+        padding: 30px;
+    }
+
+.box-two {
+    position: absolute;
+    top: 17%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+}
+
+    .box-two select {
+        background-color: darkslateblue;
+        color: white;
+        padding: 12px;
+        width: 250px;
+        border: none;
+        font-size: 20px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        -webkit-appearance: button;
+        outline: none;
+    }
+
+    .box-two::before {
+        font-family: FontAwesome;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        font-size: 28px;
+        line-height: 45px;
+        color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.1);
+        pointer-events: none;
+    }
+
+    .box-two:hover::before {
+        color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .box-two select option {
+        padding: 30px;
+    }
+
+span {
+    color: white;
+    position: absolute;
+    font-size: large;
+    top: -35%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+}
+.container {
+    color:white;
+    font-size:25px;
+    position: absolute;
+    top: 28%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+}
+.container-two {
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 35%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+}
+.sabajo h3 {
+    display: block;
+    block-size: 150px;
+    margin-block-end:20px;
+    writing-mode: horizontal-tb;
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    top: 55%;
+    left: 17%;
+    transform: translate(-50%, -50%);
+}
+.eqsperti h3 {
+    display: block;
+    block-size: 150px;
+    margin-block-end: 20px;
+    writing-mode: horizontal-tb;
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    top: 65%;
+    left: 20.5%;
+    transform: translate(-50%, -50%);
+}
+.deklaracia h3 {
+    display: block;
+    block-size: 150px;
+    margin-block-end: 20px;
+    writing-mode: horizontal-tb;
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    top: 75%;
+    left: 20.5%;
+    transform: translate(-50%, -50%);
+}
+.importi h3 {
+    display: block;
+    block-size: 150px;
+    margin-block-end: 20px;
+    writing-mode: horizontal-tb;
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    top: 85%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+.akcizi h3 {
+    display: block;
+    block-size: 150px;
+    margin-block-end: 20px;
+    writing-mode: horizontal-tb;
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    top: 95%;
+    left: 23%;
+    transform: translate(-50%, -50%);
+}
+.img {
+    display: block;
+    block-size: 150px;
+    margin-block-end: 20px;
+    writing-mode: horizontal-tb;
+    font-size: 22px;
+    position: absolute;
+    top: 55%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+}
+.jami {
+    display: block;
+    block-size: 150px;
+    margin-block-end: 20px;
+    writing-mode: horizontal-tb;
+    font-size: 22px;
+    position: absolute;
+    top: 64%;
+    left: 74.5%;
+    transform: translate(-50%, -50%);
+}
+button.rounder {
+    border: 2px solid transparent;
+    color:white;
+    background-color:green;
+    font-size:20px;
+    border-radius: 12px;
+    position:absolute;
+    top:43%;
+    left:49%;
+    transform:translate(-50%,-50%);
+}
+.info {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 78%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+}
+@media(max-width:700px){
+    .box {
+        position: absolute;
+        top: 20%;
+        left: 22%;
+        transform: translate(-50%, -50%);
+    }
+
+        .box select {
+            background-color: darkslateblue;
+            color: white;
+            padding: 12px;
+            width: 110px;
+            border: none;
+            font-size: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            -webkit-appearance: button;
+            outline: none;
+        }
+    .box-two {
+        position: absolute;
+        top: 20%;
+        left: 78%;
+        transform: translate(-50%, -50%);
+    }
+
+        .box-two select {
+            background-color: darkslateblue;
+            color: white;
+            padding: 12px;
+            width: 110px;
+            border: none;
+            font-size: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            -webkit-appearance: button;
+            outline: none;
+        }
+    span {
+        color: white;
+        position: absolute;
+        font-size: 12px;
+        top: -52%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+    }
+    .container {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 30%;
+        left: 49%;
+        transform: translate(-50%, -50%);
+    }
+
+    .container-two {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 38%;
+        left: 51%;
+        transform: translate(-50%, -50%);
+    }
+    button.rounder {
+        border: 2px solid transparent;
+        color: white;
+        background-color: green;
+        font-size: 20px;
+        border-radius: 12px;
+        position: absolute;
+        top: 48%;
+        left: 49%;
+        transform: translate(-50%,-50%);
+    }
+    .akcizi {
+        color: white;
+        font-size: 13px;
+        position: absolute;
+        top: 58%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+    }
+
+    .gadasaxadi {
+        color: white;
+        font-size: 13px;
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .jami {
+        color: white;
+        font-size: 13px;
+        position: absolute;
+        top: 58%;
+        left: 85%;
+        transform: translate(-50%, -50%);
+    }
+    .info {
+        color: white;
+        font-size: 14px;
+        width:90%;
+        position: absolute;
+        top: 82%;
+        left: 53%;
+        transform: translate(-50%, -50%);
+    }
+}

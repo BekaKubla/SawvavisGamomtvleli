@@ -19,7 +19,7 @@ h3{
 
 .table-container {
     padding: 0 10%;
-    margin: 40px auto 0;
+    margin: 100px auto 0;
 }
 
 .table {
@@ -53,3 +53,9 @@ h3{
         text-align: center;
         border: 1px solid #dee2e685;
     }
+@media(max-width:700px){
+    .table-container {
+        padding: 0 0;
+        margin: 70px auto 0;
+    }
+}

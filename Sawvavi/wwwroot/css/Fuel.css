@@ -5,7 +5,7 @@
     background-size: cover;
     width: auto;
     height: auto;
-    color: darkgray;
+    color: white;
     font-size: 20px;
     text-align: center
 }
@@ -34,7 +34,19 @@ input {
     font-size: medium;
     border-bottom: 1px solid darkgray;
 }
-
+.from{
+    color:white;
+}
+.to{
+    color:white;
+}
+.burn{
+    color:white;
+}
+::placeholder{
+    color:white;
+    opacity:0.4;
+}
 #myMap {
     opacity: .65;
     margin: auto;
@@ -52,11 +64,11 @@ input[type=button] {
     font-size: 23px;
     text-decoration: none;
     border: medium;
-    color: green
+    color: greenyellow;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 849px) {
     input {
-        width: 40%;
+        width: 35%;
     }
 }
