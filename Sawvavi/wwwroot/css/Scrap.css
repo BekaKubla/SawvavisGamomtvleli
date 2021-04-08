@@ -12,24 +12,25 @@ body {
     text-align: center;
     font-family: sans-serif;
 }
-h3{
-    color:red;
-    text-decoration-line:line-through;
+
+h3 {
+    color: red;
+    text-decoration-line: line-through;
 }
 
 .table-container {
     padding: 0 10%;
-    margin: 100px auto 0;
+    margin: 60px auto 0;
 }
 
 .table {
-    opacity: 0.88;
+    opacity: 0.92;
     width: 100%;
     border-collapse: collapse;
 }
 
     .table thead {
-        background-color: #ee2828;
+        background-color: white;
     }
 
         .table thead tr th {
@@ -40,7 +41,7 @@ h3{
             opacity: 1;
             padding: 12px;
             vertical-align: top;
-            border: 1px solid #dee2e685;
+            border: 1.5px solid black;
         }
 
     .table tbody tr td {
@@ -51,11 +52,42 @@ h3{
         background-color: #3c3f44;
         padding: 8px;
         text-align: center;
-        border: 1px solid #dee2e685;
+        border: 1.5px solid black;
     }
-@media(max-width:700px){
+
+.crudebox {
+    width: 198px;
+    opacity: 0.85;
+    border: 1px solid #2D6AB4;
+    height: auto;
+    margin: 13px 670px;
+    height: auto;
+    background-color: #FFFFFF;
+    font-family: Arial,sans-serif;
+}
+
+.crudename {
+    background-color: #2D6AB4;
+    width: 100%;
+    margin: 0px auto;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 0px;
+}
+
+@media(max-width:700px) {
     .table-container {
         padding: 0 0;
         margin: 70px auto 0;
+    }
+
+    .crudebox {
+        width: 198px;
+        border: 1px solid #2D6AB4;
+        height: auto;
+        margin: 13px 200px;
+        height: auto;
+        background-color: #FFFFFF;
+        font-family: Arial,sans-serif;
     }
 }

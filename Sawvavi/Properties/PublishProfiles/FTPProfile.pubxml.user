@@ -8,7 +8,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
     <_PublishTargetUrl>ftp://mandzili-georgia.somee.com/www.mandzili-georgia.somee.com/www.mandzili-georgia.somee.com</_PublishTargetUrl>
-    <History>True|2021-04-04T10:20:46.1078471Z;</History>
+    <History>True|2021-04-08T13:41:58.7358884Z;True|2021-04-05T15:26:09.4652639+04:00;True|2021-04-05T14:30:29.4489046+04:00;True|2021-04-04T14:20:46.1078471+04:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
@@ -72,25 +72,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="FuelProject.deps.json">
-      <publishTime>04/04/2021 14:15:30</publishTime>
+      <publishTime>04/08/2021 17:36:20</publishTime>
     </File>
     <File Include="FuelProject.dll">
-      <publishTime>04/04/2021 14:15:28</publishTime>
+      <publishTime>04/08/2021 17:36:20</publishTime>
     </File>
     <File Include="FuelProject.exe">
-      <publishTime>04/04/2021 14:15:28</publishTime>
+      <publishTime>04/08/2021 17:36:20</publishTime>
     </File>
     <File Include="FuelProject.pdb">
-      <publishTime>04/04/2021 14:15:28</publishTime>
+      <publishTime>04/08/2021 17:36:20</publishTime>
     </File>
     <File Include="FuelProject.runtimeconfig.json">
-      <publishTime>04/04/2021 14:15:30</publishTime>
+      <publishTime>04/05/2021 14:24:56</publishTime>
     </File>
     <File Include="FuelProject.Views.dll">
-      <publishTime>04/04/2021 14:15:30</publishTime>
+      <publishTime>04/08/2021 17:36:20</publishTime>
     </File>
     <File Include="FuelProject.Views.pdb">
-      <publishTime>04/04/2021 14:15:30</publishTime>
+      <publishTime>04/08/2021 17:36:20</publishTime>
     </File>
     <File Include="HtmlAgilityPack.dll">
       <publishTime>03/03/2021 04:31:10</publishTime>
@@ -179,6 +179,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="MimeKit.dll">
       <publishTime>03/12/2021 22:18:36</publishTime>
     </File>
+    <File Include="NET.Core.NBG.Service.API.Client.dll">
+      <publishTime>07/11/2017 18:35:58</publishTime>
+    </File>
     <File Include="Newtonsoft.Json.dll">
       <publishTime>03/24/2018 17:44:14</publishTime>
     </File>
@@ -221,6 +224,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="ru/Microsoft.CodeAnalysis.Workspaces.resources.dll">
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
+    <File Include="SimpleSOAPClient.dll">
+      <publishTime>07/28/2016 21:19:42</publishTime>
+    </File>
     <File Include="System.Composition.AttributedModel.dll">
       <publishTime>11/05/2016 04:55:42</publishTime>
     </File>
@@ -249,7 +255,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>04/04/2021 14:15:40</publishTime>
+      <publishTime>04/08/2021 17:36:28</publishTime>
     </File>
     <File Include="WebDriver.dll">
       <publishTime>10/31/2018 09:53:56</publishTime>
@@ -257,11 +263,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="wwwroot/css/Contact.css">
       <publishTime>03/30/2021 17:17:02</publishTime>
     </File>
+    <File Include="wwwroot/css/Footer.css">
+      <publishTime>04/04/2021 16:49:14</publishTime>
+    </File>
     <File Include="wwwroot/css/Fuel.css">
       <publishTime>04/04/2021 12:00:16</publishTime>
     </File>
     <File Include="wwwroot/css/Ganbajeba.css">
-      <publishTime>04/04/2021 10:51:23</publishTime>
+      <publishTime>04/08/2021 14:16:46</publishTime>
     </File>
     <File Include="wwwroot/css/Layout.css">
       <publishTime>04/03/2021 12:05:41</publishTime>
@@ -273,10 +282,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/29/2021 16:46:14</publishTime>
     </File>
     <File Include="wwwroot/css/Scraping.css">
-      <publishTime>04/04/2021 12:08:49</publishTime>
+      <publishTime>04/08/2021 17:25:51</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
       <publishTime>03/27/2021 20:53:13</publishTime>
+    </File>
+    <File Include="wwwroot/logos/gulflogo.png">
+      <publishTime>04/08/2021 17:04:13</publishTime>
+    </File>
+    <File Include="wwwroot/logos/lokoillogo.png">
+      <publishTime>04/08/2021 17:02:19</publishTime>
+    </File>
+    <File Include="wwwroot/logos/optimalogo.png">
+      <publishTime>04/08/2021 17:13:09</publishTime>
+    </File>
+    <File Include="wwwroot/logos/portallogo.png">
+      <publishTime>04/08/2021 17:08:34</publishTime>
+    </File>
+    <File Include="wwwroot/logos/romeptrollogo.png">
+      <publishTime>04/08/2021 17:00:59</publishTime>
+    </File>
+    <File Include="wwwroot/logos/socarlogo.png">
+      <publishTime>04/08/2021 16:58:08</publishTime>
     </File>
     <File Include="zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll">
       <publishTime>09/12/2019 17:09:00</publishTime>

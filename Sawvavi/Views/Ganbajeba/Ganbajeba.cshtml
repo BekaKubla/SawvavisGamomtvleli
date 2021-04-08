@@ -31,30 +31,33 @@
         }
         else
         {
-        <div class="sabajo">
-            <h3>საბაჟო მომსახურეობის გადასახადი : 150₾</h3>
-        </div>
-        <div class="eqsperti">
-            <h3>ექსპერტის შეფასება : 20₾</h3>
-        </div>
-        <div class="deklaracia">
-            <h3>საბაჟო დეკლარაცია : 30₾</h3>
-        </div>
-        <div class="importi">
-            <h3>იმპორტის გადასახადი : @ViewBag.Gadasaxadi₾</h3>
-        </div>
-        <div class="akcizi">
-            <h3>აქციზი : @ViewBag.Aqcizi₾</h3>
-        </div>
-        <div class="jami">
-            <h3 style="color:green">სულ</h3>
-            <h3 style="color:red">₾@ViewBag.Jami</h3>
-            <h3></h3>
-            <h3 style="color:red">@ViewBag.JamiInUSD</h3>
-        </div>
-        <div class="img">
-            <img src="https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-circle-frame-3.png"width="370"height="370" />
-        </div>
+            <div class="sabajo">
+                <h3>საბაჟო მომსახურეობის გადასახადი : 150₾</h3>
+            </div>
+            <div class="eqsperti">
+                <h3>ექსპერტის შეფასება : 20₾</h3>
+            </div>
+            <div class="deklaracia">
+                <h3>საბაჟო დეკლარაცია : 30₾</h3>
+            </div>
+            <div class="importi">
+                <h3>იმპორტის გადასახადი : @ViewBag.Gadasaxadi₾</h3>
+            </div>
+            <div class="akcizi">
+                <h3>აქციზი : @ViewBag.Aqcizi₾</h3>
+            </div>
+            <div class="jami">
+                <h3 style="color:green">სულ</h3>
+                <h3 style="color:red">₾@ViewBag.Jami</h3>
+                <h3></h3>
+                <h3 style="color:red">@ViewBag.JamiInUSD</h3>
+            </div>
+            <div class="currency">
+                <h3>1$=@Model.CurrecyUSD</h3>
+            </div>
+            <div class="img">
+                <img src="https://www.onlygfx.com/wp-content/uploads/2017/11/grunge-circle-frame-3.png" width="370" height="370" />
+            </div>
         }
     </div>
     <button class="rounder" type="submit">გამოთვლა</button>
@@ -64,7 +67,7 @@
     <div id="container">
         <div id="cont">
             <div class="footer_center">
-                <h3><a asp-controller="contact"asp-action="index">კონტაქტი</a></h3>
+                <h3><a asp-controller="contact" asp-action="index">კონტაქტი</a></h3>
             </div>
         </div>
     </div>

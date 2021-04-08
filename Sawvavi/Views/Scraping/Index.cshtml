@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<FuelProject.Models.FuelPrice>
-    <head>
-        <link href="~/css/Scraping.css" rel="stylesheet" />
-    </head>
+<head>
+    <link href="~/css/Scrap.css" rel="stylesheet" />
+</head>
     <body>
         <div class="table-container">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>საწვავის დასახელება</th>
-                        <th>Socar</th>
-                        <th>Rompetrol</th>
-                        <th>Lukoil</th>
-                        <th>Gulf</th>
-                        <th>Portal</th>
-                        <th>Optima</th>
+                        <th style="color:black;">საწვავის დასახელება</th>
+                        <th><img style="max-width:45%;height:auto;" src="~/logos/socarlogo.png" /></th>
+                        <th><img style="max-width:48%;height:auto;" src="~/logos/romeptrollogo.png" /></th>
+                        <th><img style="max-width:45%;height:auto;" src="~/logos/lokoillogo.png" /></th>
+                        <th><img style="max-width:45%;height:auto;" src="~/logos/gulflogo.png" /></th>
+                        <th><img style="max-width:48%;height:auto;" src="~/logos/portallogo.png" /></th>
+                        <th><img style="max-width:48%;height:auto;" src="~/logos/optimalogo.png" /></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -755,5 +755,11 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="crudebox">
+            <div class="crudename">
+                <a style="font-size:18px; color:#FFFFFF;text-decoration:none;">WTI Crude Price</a>
+            </div>
+            <script src="https://www.oilcrudeprice.com/oilwidget.php?m=000000&g=FFFFFF&c=2D6AB4&i=FFFFFF&l=76A4FB&o=E6F2FA&w=200&u=wti"></script>
         </div>
     </body>

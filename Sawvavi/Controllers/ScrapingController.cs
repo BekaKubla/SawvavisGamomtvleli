@@ -107,7 +107,6 @@ namespace FuelProject.Controllers
             fuels[16].PortalPrice = fuels[16].PortalPrice + "effectivedisseli";
             fuels[17].PortalPrice = fuels[17].PortalPrice + "diseli";
 
-
             //optima scraping
 
             var optimaUrl = "http://optimapetrol.ge/";

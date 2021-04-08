@@ -187,7 +187,7 @@ span {
     writing-mode: horizontal-tb;
     font-size: 22px;
     position: absolute;
-    top: 55%;
+    top: 57%;
     left: 75%;
     transform: translate(-50%, -50%);
 }
@@ -221,11 +221,19 @@ button.rounder {
     left: 53%;
     transform: translate(-50%, -50%);
 }
-@media(max-width:700px){
+.currency {
+    color: red;
+    font-size: 20px;
+    position: absolute;
+    top: 80%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 823px) {
     .box {
         position: absolute;
         top: 20%;
-        left: 22%;
+        left: 32%;
         transform: translate(-50%, -50%);
     }
 
@@ -243,7 +251,7 @@ button.rounder {
     .box-two {
         position: absolute;
         top: 20%;
-        left: 78%;
+        left: 98%;
         transform: translate(-50%, -50%);
     }
 
@@ -271,7 +279,7 @@ button.rounder {
         font-size: 20px;
         position: absolute;
         top: 30%;
-        left: 49%;
+        left: 66%;
         transform: translate(-50%, -50%);
     }
 
@@ -279,8 +287,8 @@ button.rounder {
         color: white;
         font-size: 20px;
         position: absolute;
-        top: 38%;
-        left: 51%;
+        top: 42%;
+        left: 66%;
         transform: translate(-50%, -50%);
     }
     button.rounder {
@@ -290,43 +298,104 @@ button.rounder {
         font-size: 20px;
         border-radius: 12px;
         position: absolute;
-        top: 48%;
-        left: 49%;
+        top: 52%;
+        left: 63%;
         transform: translate(-50%,-50%);
     }
-    .akcizi {
-        color: white;
-        font-size: 13px;
+    .img {
+        display: block;
+        block-size: 150px;
+        margin-block-end: 20px;
+        writing-mode: horizontal-tb;
+        font-size: 22px;
         position: absolute;
-        top: 58%;
-        left: 10%;
+        top: 2000%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+    }
+    .sabajo h3 {
+        display: block;
+        block-size: 200px;
+        margin-block-end: 200px;
+        writing-mode: horizontal-tb;
+        color: white;
+        height:20px;
+        width:100%;
+        font-size: 20px;
+        position: absolute;
+        top: 64%;
+        left: 52%;
         transform: translate(-50%, -50%);
     }
 
-    .gadasaxadi {
+    .eqsperti h3 {
+        display: block;
+        block-size: 150px;
+        margin-block-end: 20px;
+        writing-mode: horizontal-tb;
         color: white;
-        font-size: 13px;
+        height: 50px;
+        width: 100%;
+        font-size: 20px;
         position: absolute;
-        top: 58%;
-        left: 50%;
+        top: 74%;
+        left: 53%;
+        transform: translate(-50%, -50%);
+    }
+
+    .deklaracia h3 {
+        display: block;
+        block-size: 150px;
+        margin-block-end: 20px;
+        writing-mode: horizontal-tb;
+        color: white;
+        height: 50px;
+        width: 100%;
+        font-size: 20px;
+        position: absolute;
+        top: 83%;
+        left:53%;
+        transform: translate(-50%, -50%);
+    }
+
+    .importi h3 {
+        display: block;
+        block-size: 150px;
+        margin-block-end: 20px;
+        writing-mode: horizontal-tb;
+        color: white;
+        height: 50px;
+        width: 100%;
+        font-size: 20px;
+        position: absolute;
+        top: 91%;
+        left: 53%;
+        transform: translate(-50%, -50%);
+    }
+
+    .akcizi h3 {
+        display: block;
+        block-size: 150px;
+        margin-block-end: 20px;
+        writing-mode: horizontal-tb;
+        color: white;
+        height: 50px;
+        width: 100%;
+        font-size: 20px;
+        position: absolute;
+        top: 100%;
+        left: 53%;
         transform: translate(-50%, -50%);
     }
 
     .jami {
         color: white;
-        font-size: 13px;
+        font-size: 20px;
         position: absolute;
-        top: 58%;
-        left: 85%;
-        transform: translate(-50%, -50%);
-    }
-    .info {
-        color: white;
-        font-size: 14px;
-        width:90%;
-        position: absolute;
-        top: 82%;
-        left: 53%;
+        height: 50px;
+        width: 100%;
+        top: 75%;
+        left: 176%;
         transform: translate(-50%, -50%);
     }
 }
