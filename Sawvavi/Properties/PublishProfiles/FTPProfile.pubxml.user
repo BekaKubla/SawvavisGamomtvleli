@@ -8,7 +8,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
     <_PublishTargetUrl>ftp://mandzili-georgia.somee.com/www.mandzili-georgia.somee.com/www.mandzili-georgia.somee.com</_PublishTargetUrl>
-    <History>True|2021-04-08T13:41:58.7358884Z;True|2021-04-05T15:26:09.4652639+04:00;True|2021-04-05T14:30:29.4489046+04:00;True|2021-04-04T14:20:46.1078471+04:00;</History>
+    <History>True|2021-04-08T14:55:25.0123962Z;True|2021-04-08T17:41:58.7358884+04:00;True|2021-04-05T15:26:09.4652639+04:00;True|2021-04-05T14:30:29.4489046+04:00;True|2021-04-04T14:20:46.1078471+04:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
@@ -72,25 +72,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="FuelProject.deps.json">
-      <publishTime>04/08/2021 17:36:20</publishTime>
+      <publishTime>04/08/2021 18:49:33</publishTime>
     </File>
     <File Include="FuelProject.dll">
-      <publishTime>04/08/2021 17:36:20</publishTime>
+      <publishTime>04/08/2021 18:49:32</publishTime>
     </File>
     <File Include="FuelProject.exe">
-      <publishTime>04/08/2021 17:36:20</publishTime>
+      <publishTime>04/08/2021 18:49:32</publishTime>
     </File>
     <File Include="FuelProject.pdb">
-      <publishTime>04/08/2021 17:36:20</publishTime>
+      <publishTime>04/08/2021 18:49:32</publishTime>
     </File>
     <File Include="FuelProject.runtimeconfig.json">
       <publishTime>04/05/2021 14:24:56</publishTime>
     </File>
     <File Include="FuelProject.Views.dll">
-      <publishTime>04/08/2021 17:36:20</publishTime>
+      <publishTime>04/08/2021 18:49:33</publishTime>
     </File>
     <File Include="FuelProject.Views.pdb">
-      <publishTime>04/08/2021 17:36:20</publishTime>
+      <publishTime>04/08/2021 18:49:33</publishTime>
     </File>
     <File Include="HtmlAgilityPack.dll">
       <publishTime>03/03/2021 04:31:10</publishTime>
@@ -255,7 +255,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>04/08/2021 17:36:28</publishTime>
+      <publishTime>04/08/2021 18:49:47</publishTime>
     </File>
     <File Include="WebDriver.dll">
       <publishTime>10/31/2018 09:53:56</publishTime>
@@ -280,6 +280,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="wwwroot/css/Scaping.css">
       <publishTime>03/29/2021 16:46:14</publishTime>
+    </File>
+    <File Include="wwwroot/css/Scrap.css">
+      <publishTime>04/08/2021 18:48:00</publishTime>
     </File>
     <File Include="wwwroot/css/Scraping.css">
       <publishTime>04/08/2021 17:25:51</publishTime>
