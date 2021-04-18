@@ -29,26 +29,26 @@ namespace FuelProject.Migrations
                     b.Property<DateTime>("DateTimeNow")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("GulfPrice")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LukoilPrice")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OptimaPrice")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PortalPrice")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PriceCategory")
+                    b.Property<int>("FuelCategory")
                         .HasColumnType("int");
 
-                    b.Property<string>("RompetrolPrice")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("GulfPrice")
+                        .HasColumnType("float");
 
-                    b.Property<string>("SocarPrice")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("LukoilPrice")
+                        .HasColumnType("float");
+
+                    b.Property<double>("OptimaPrice")
+                        .HasColumnType("float");
+
+                    b.Property<double>("PortalPrice")
+                        .HasColumnType("float");
+
+                    b.Property<double>("RompetrolPrice")
+                        .HasColumnType("float");
+
+                    b.Property<double>("SocarPrice")
+                        .HasColumnType("float");
 
                     b.HasKey("ID");
 

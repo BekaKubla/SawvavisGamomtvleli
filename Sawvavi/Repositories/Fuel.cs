@@ -22,6 +22,11 @@ namespace FuelProject.Repositories
             return fuelPrice;
         }
 
+        public IEnumerable<FuelPrice> GetPrices(FuelPrice fuelPrice)
+        {
+            return _context.FuelPrices;
+        }
+
         public bool SaveChange()
         {
             return (_context.SaveChanges()>=0);

@@ -9,6 +9,7 @@ namespace FuelProject.Repositories
    public interface IFuel
     {
         FuelPrice Create(FuelPrice fuelPrice);
+        IEnumerable<FuelPrice> GetPrices(FuelPrice fuelPrice);
         bool SaveChange();
     }
 }

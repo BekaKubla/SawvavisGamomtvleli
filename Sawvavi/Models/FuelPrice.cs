@@ -10,23 +10,24 @@ namespace FuelProject.Models
     {
         public int ID { get; set; }
         public DateTime DateTimeNow { get; set; }
-        public PriceCategory PriceCategory { get; set; }
-        public string RompetrolPrice { get; set; }
-        public string GulfPrice { get; set; }
-        public string PortalPrice { get; set; }
-        public string OptimaPrice { get; set; }
-        public string SocarPrice { get; set; }
-        public string LukoilPrice { get; set; }
+        public FuelCategory FuelCategory { get; set; }
+        public double RompetrolPrice { get; set; }
+        public double GulfPrice { get; set; }
+        public double PortalPrice { get; set; }
+        public double OptimaPrice { get; set; }
+        public double SocarPrice { get; set; }
+        public double LukoilPrice { get; set; }
     }
-    public enum PriceCategory
+    public enum FuelCategory
     {
+        superi,
+        premiumi,
         regulari,
         evroregulari,
-        premiumi,
-        superi,
         dizeli,
         evrodizeli,
-        binebrivigazi,
-        txevadigazi
+        txevadigazi,
+        bunebrivigazi
+
     }
 }

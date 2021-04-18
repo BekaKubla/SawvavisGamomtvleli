@@ -42,7 +42,7 @@ namespace FuelProject
             .UseDefaultTypeSerializer()
             .UseMemoryStorage());
             services.AddHangfireServer();
-            services.AddTransient<ITestJob, TestJob>();
+            services.AddTransient<IFuelPriceJob, FuelPriceJob>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,11 +59,10 @@ namespace FuelProject
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Scraping}/{action=Index}");
+                    pattern: "{controller=Scraping}/{action=FuelPrices}");
             });
             app.UseHangfireDashboard();
-            backgroundJobClient.Enqueue(() => Console.WriteLine("Hello hangfire job"));
-            recurringJobManager.AddOrUpdate("Run every minute", () => serviceProvider.GetService<ITestJob>().Job(), Cron.Minutely);
+            recurringJobManager.AddOrUpdate("Run every minute", () => serviceProvider.GetService<IFuelPriceJob>().FuelPriceJobJob(), Cron.Hourly);
 
         }
     }

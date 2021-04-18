@@ -2,8 +2,8 @@
 
 namespace FuelProject
 {
-    public interface ITestJob
+    public interface IFuelPriceJob
     {
-        Task Job();
+        Task FuelPriceJobJob();
     }
 }
