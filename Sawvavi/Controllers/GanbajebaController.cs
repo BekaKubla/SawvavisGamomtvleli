@@ -123,12 +123,14 @@ namespace FuelProject.Controllers
                 }
             }
         }
+        [Route("Ganbajeba")]
         [HttpGet]
         public IActionResult Ganbajeba()
         {
             SizeYear();
             return View(new Ganbajeba());
         }
+        [Route("Ganbajeba")]
         [HttpPost]
         public async Task<IActionResult> Ganbajeba(Ganbajeba ganbajeba)
         {

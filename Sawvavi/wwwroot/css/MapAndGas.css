@@ -1,0 +1,96 @@
+﻿body {
+    background-image: url(https://wallpaperaccess.com/full/1994612.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: auto;
+    height: auto;
+    color: white;
+    font-size: 20px;
+    text-align: center
+}
+
+#myMap {
+    opacity: .65;
+    object-fit: scale-down;
+    position: relative;
+    top: 3px;
+    margin: auto;
+    width: 40%;
+    padding: 150px;
+}
+
+    #myMap:hover {
+        opacity: 1
+    }
+
+input {
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    width: 10%;
+    font-size: medium;
+    border-bottom: 1.85px solid white;
+}
+
+.from {
+    font-weight: bolder;
+    color: white;
+}
+
+.to {
+    font-weight: bolder;
+    color: white;
+}
+
+.burn {
+    font-weight: bolder;
+    color: white;
+}
+
+#myMap {
+    opacity: .65;
+    margin: auto;
+    width: 40%;
+    padding: 150px;
+    border-radius: 8px
+}
+
+    #myMap:hover {
+        opacity: 1
+    }
+
+input[type=button] {
+    background-color: transparent;
+    font-size: 23px;
+    text-decoration: none;
+    border: medium;
+    color: greenyellow;
+}
+
+@media screen and (max-width: 849px) {
+    input {
+        width: 40%;
+    }
+
+    .from {
+        width: 400px;
+    }
+
+    .to {
+        width: 410px;
+        padding: 10px;
+    }
+
+    .burn {
+        width: 280px;
+        padding: 10px;
+    }
+    #myMap {
+        margin: 9.5px;
+        width: 150px;
+        border-radius: 8px
+    }
+}

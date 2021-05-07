@@ -1,0 +1,21 @@
+﻿@model FuelProject.Models.Contact
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<form asp-controller="Contact" asp-action="Index" method="post" class="main_form">
+    <div class="row">
+        <div class="col-md-12 ">
+            <span style="color:red" asp-validation-for="Name"></span>
+            <input class="contactus" asp-for="Name" placeholder="სახელი" type="text" name="Name">
+        </div>
+        <div class="col-md-12">
+            <span style="color:red" asp-validation-for="Mail"></span>
+            <input class="contactus" asp-for="Mail" placeholder="ელ-ფოსტა" type="text" name="Mail">
+        </div>
+        <div class="col-md-12">
+            <span style="color:red" asp-validation-for="Subject"></span>
+            <textarea class="textarea" asp-for="Subject" placeholder="შეტყობინება" type="type" Message="Name"></textarea>
+        </div>
+        <div class="col-sm-col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <button class="send_btn" type="submit">გაგზავნა</button>
+        </div>
+    </div>
+</form>

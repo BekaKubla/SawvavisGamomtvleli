@@ -1,71 +1,172 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>mical</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- style css -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <!-- Responsive-->
+    <link href="~/css/responsive.css" rel="stylesheet" />
+    <!-- fevicon -->
+    <link rel="icon" href="~/images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link href="~/css/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!--MAP START-->
     <link href="~/css/Fuel.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
-    <title></title>
-    <meta charset="utf-8">
+    <!--MAP END-->
 </head>
-<body>
-    <script type="text/javascript">
-        function GetMap() {
-            map = new Microsoft.Maps.Map("#myMap", {}), Microsoft.Maps.loadModule("Microsoft.Maps.Directions", function () {
-                directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map), directionsManager.setRenderOptions({
-                    itineraryContainer: "#directionsItinerary"
-                }), directionsManager.showInputPanel("directionsPanel"), directionsManager.setRequestOptions({
-                    routeMode: Microsoft.Maps.Directions.RouteMode.driving
-                })
-            })
-        }
-
-        function GetDirections() {
-            directionsManager.clearAll(), directionsManager.clearDisplay();
-            var e = new Microsoft.Maps.Directions.Waypoint({
-                address: document.getElementById("fromTbx").value
-            });
-            directionsManager.addWaypoint(e);
-            var i = new Microsoft.Maps.Directions.Waypoint({
-                address: document.getElementById("toTbx").value
-            });
-            directionsManager.addWaypoint(i), Microsoft.Maps.Events.addHandler(directionsManager, "directionsError", directionsError), Microsoft.Maps.Events.addHandler(directionsManager, "directionsUpdated", directionsUpdated), directionsManager.calculateDirections()
-        }
-
-        function directionsUpdated(e) {
-            var i = directionsManager.getRequestOptions().routeIndex,
-                n = Math.round(100 * e.routeSummary[i].distance) / 100,
-                t = directionsManager.getRequestOptions().distanceUnit,
-                r = "";
-            t == Microsoft.Maps.Directions.DistanceUnit.km && (r = "km");
-            var o = document.getElementById("burningGasoline").value,
-                a = 100 / o,
-                s = n / a;
-            s = s.toFixed(1);
-            var d = Math.round(e.routeSummary[i].timeWithTraffic / 60);
-            document.getElementById("routeInfoPanel").innerHTML = "<br/>მანძილი: " + n + " " + r + " <br/>საწვავის რაოდენობა : " + s + " ლიტრი<br/>"
-        }
-
-        function directionsError(e) {
-            alert("შეცდომააა!!! გადაამოწმეთ შეყვანილი ინფორმაცია ")
-        }
-        var map, directionsManager;
-    </script>
-    <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AkC0sJoPfLbvE3feNBAKiBct4hMbvJ5Knhoc6rvg32VLNOb_GvZXrjqh-0VRX5jB" async defer></script>
-    <h1></h1>
-    <h1></h1>
-    <div id="myMap"></div><div id="routeInfoPanel"></div>
-    <div>
-            <h1></h1>
-            <h1></h1>
-            <div class="from">
-               საიდან <input type="text" id="fromTbx" autocomplete="off" placeholder="ჩაწერეთ ქალაქი" />
+<!-- body -->
+<body class="main-layout">
+    <!-- wedo  section -->
+    <div class="wedo ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>რამდენი ლიტრი საწვავი დაგჭირდება?</h2>
+                        <p>ჩაწერეთ ქალაქები </p>
+                        <p>ჩაწერეთ ავტომობილის წვა 100 კილომეტრზე </p>
+                        <p>გამოთვალეთ რამდენი ლიტრი საწვავი დაგჭირდებათ მანძილის დასაფარად</p>
+                    </div>
+                </div>
             </div>
-            <div class="to">
-                  სად <input type="text" id="toTbx" autocomplete="off" placeholder="ჩაწერეთ ქალაქი" />
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="row">
+                        <div class="col-md-6 margin_bottom">
+                            <script type="text/javascript">
+                                function GetMap() {
+                                    map = new Microsoft.Maps.Map("#myMap", {}), Microsoft.Maps.loadModule("Microsoft.Maps.Directions", function () {
+                                        directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map), directionsManager.setRenderOptions({
+                                            itineraryContainer: "#directionsItinerary"
+                                        }), directionsManager.showInputPanel("directionsPanel"), directionsManager.setRequestOptions({
+                                            routeMode: Microsoft.Maps.Directions.RouteMode.driving
+                                        })
+                                    })
+                                }
+                                function GetDirections() {
+                                    directionsManager.clearAll(), directionsManager.clearDisplay();
+                                    var e = new Microsoft.Maps.Directions.Waypoint({
+                                        address: document.getElementById("fromTbx").value
+                                    });
+                                    directionsManager.addWaypoint(e);
+                                    var i = new Microsoft.Maps.Directions.Waypoint({
+                                        address: document.getElementById("toTbx").value
+                                    });
+                                    directionsManager.addWaypoint(i), Microsoft.Maps.Events.addHandler(directionsManager, "directionsError", directionsError), Microsoft.Maps.Events.addHandler(directionsManager, "directionsUpdated", directionsUpdated), directionsManager.calculateDirections()
+                                }
+                                function directionsUpdated(e) {
+                                    var i = directionsManager.getRequestOptions().routeIndex,
+                                        n = Math.round(100 * e.routeSummary[i].distance) / 100,
+                                        t = directionsManager.getRequestOptions().distanceUnit,
+                                        r = "";
+                                    t == Microsoft.Maps.Directions.DistanceUnit.km && (r = "km");
+                                    var o = document.getElementById("burningGasoline").value,
+                                        a = 100 / o,
+                                        s = n / a;
+                                    s = s.toFixed(1);
+                                    var d = Math.round(e.routeSummary[i].timeWithTraffic / 60);
+                                    var o = d / 60;
+                                    var saati = ('' + o)[0];
+                                    var wuti = d % 60;
+                                    if (d < 60) {
+                                        document.getElementById("routeInfoPanel").innerHTML = "<br/>მანძილი: " + n + " " + r + " <br/>საწვავის რაოდენობა : " + s + " ლიტრი<br/>დრო: " + d + "წუთი"
+                                    }
+                                    else {
+                                        document.getElementById("routeInfoPanel").innerHTML = "<br/>მანძილი: " + n + " " + r + " <br/>საწვავის რაოდენობა : " + s + " ლიტრი<br/>დრო: " + saati + "საათი" + " " + wuti + "წუთი"
+                                    }
+
+                                }
+                                function directionsError(e) {
+                                    alert("შეცდომააა!!! გადაამოწმეთ შეყვანილი ინფორმაცია ")
+                                }
+                                var map, directionsManager;
+                            </script>
+                            <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AkC0sJoPfLbvE3feNBAKiBct4hMbvJ5Knhoc6rvg32VLNOb_GvZXrjqh-0VRX5jB" async defer></script>
+                            <div id="myMap"></div><div id="routeInfoPanel"></div>
+                            <div>
+                                <h1></h1>
+                                <h1></h1>
+                                <div class="from">
+                                    საიდან <input type="text" id="fromTbx" autocomplete="off" placeholder="ჩაწერეთ ქალაქი" />
+                                </div>
+                                <div class="to">
+                                    სად <input type="text" id="toTbx" autocomplete="off" placeholder="ჩაწერეთ ქალაქი" />
+                                </div>
+                                <div class="burn">
+                                    მანქანის წვა <input id="burningGasoline" step="any" type="number" placeholder="წვა 100 კმ-ზე">
+                                </div>
+                            </div>
+                            <div class="btn_calc">
+                                <button class="send_btn" onclick="GetDirections()">გამოთვლა</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="burn">
-               მანქანის წვა <input id="burningGasoline" step="any" type="number" placeholder="წვა 100 კმ-ზე">
-            </div>
-            <input type="button" onclick="GetDirections()" value="გამოთვლა">
         </div>
+    </div>
+    <!-- end wedo  section -->
+    <!--  footer -->
+    <footer id="contact">
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="titlepage">
+                            <h2>კონტაქტი</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="location_icon">
+                            <li><i class="fa fa-volume-control-phone" aria-hidden="true"></i> +995 579025090</li>
+                            <li><i class="fa fa-envelope" aria-hidden="true"></i> InfoMandzili@Gmail.Com</li>
+                            <li><a href="https://www.facebook.com/mandzili.ge" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>Mandzili.GE</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        @await Component.InvokeAsync("Contact")
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Copyright 2021 All Right Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!-- Javascript files-->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/jquery-3.0.0.min.js"></script>
+    <!-- sidebar -->
+    <script src="~/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/js/custom.js"></script>
 </body>
 </html>

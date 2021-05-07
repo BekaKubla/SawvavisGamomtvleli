@@ -19,8 +19,9 @@ namespace FuelProject
         }
         public async Task FuelPriceJobJob()
         {
+
             //Rompetrol Scraping
-            List<FuelPrice> fuels = new List<FuelPrice>();
+
             var rompetrolUrl = "https://www.rompetrol.ge/%E1%83%91%E1%83%98%E1%83%96%E1%83%9C%E1%83%94%E1%83%A1%E1%83%98/%E1%83%A2%E1%83%94%E1%83%9C%E1%83%93%E1%83%94%E1%83%A0%E1%83%94%E1%83%91%E1%83%98-%E1%83%90%E1%83%A3%E1%83%A5%E1%83%AA%E1%83%98%E1%83%9D%E1%83%9C%E1%83%94%E1%83%91%E1%83%98";
 
             var httpclient = new HttpClient();
@@ -85,8 +86,12 @@ namespace FuelProject
             //socar scraping
             var socarUrl = "https://www.sgp.ge/ge/price";
 
-            var socarHttpClient = new HttpClient();
-            var socarHtml = await optimaHttpClient.GetStringAsync(socarUrl);
+            var clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+
+            var socarHttpClient = new HttpClient(clientHandler);
+            var socarHtml = await socarHttpClient.GetStringAsync(socarUrl);
             var socarHtmlDocument = new HtmlDocument();
 
             socarHtmlDocument.LoadHtml(socarHtml);

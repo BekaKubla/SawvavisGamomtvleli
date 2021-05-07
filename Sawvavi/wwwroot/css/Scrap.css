@@ -5,7 +5,6 @@
 }
 
 body {
-    background-image: url("https://wallpaperaccess.com/full/3977712.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -13,11 +12,20 @@ body {
     font-family: sans-serif;
 }
 
-h3 {
+h4 {
     color: red;
     text-decoration-line: line-through;
+    font-size:15px;
 }
+h3 {
+    color:white;
+    font-size: 15px;
+}
+.last_update{
+    font-size:17px;
+    color:green;
 
+}
 .table-container {
     padding: 0 10%;
     margin: 60px auto 0;
@@ -35,7 +43,7 @@ h3 {
 
         .table thead tr th {
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: 0.35px;
             color: white;
             opacity: 1;
@@ -54,26 +62,6 @@ h3 {
         text-align: center;
         border: 1.5px solid black;
     }
-
-.crudebox {
-    width: 198px;
-    opacity: 0.85;
-    border: 1px solid #2D6AB4;
-    height: auto;
-    margin: 13px 670px;
-    height: auto;
-    background-color: #FFFFFF;
-    font-family: Arial,sans-serif;
-}
-
-.crudename {
-    background-color: #2D6AB4;
-    width: 100%;
-    margin: 0px auto;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 0px;
-}
 .socar {
     max-width: 45%;
     height: auto;
@@ -87,7 +75,7 @@ h3 {
     height: auto;
 }
 .gulf {
-    max-width: 45%;
+    max-width: 75%;
     height: auto;
 }
 .portal {
@@ -98,24 +86,11 @@ h3 {
     max-width: 48%;
     height: auto;
 }
-h2{
-    display:none;
-}
 
 @media(max-width:700px) {
     .table-container {
         padding: 0 0;
         margin: 70px auto 0;
-    }
-
-    .crudebox {
-        width: 198px;
-        border: 1px solid #2D6AB4;
-        height: auto;
-        margin: 13px 200px;
-        height: auto;
-        background-color: #FFFFFF;
-        font-family: Arial,sans-serif;
     }
     h2 {
         color:black;

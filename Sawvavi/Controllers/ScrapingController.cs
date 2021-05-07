@@ -21,12 +21,17 @@ namespace FuelProject.Controllers
         {
             _fuel = fuel;
         }
+        [Route("FuelPrices")]
         public IActionResult FuelPrices(FuelPrice fuelPrice)
         {
             var getPrices = _fuel.GetPrices(fuelPrice);
             var getCurrentData = getPrices.GroupBy(x => x.FuelCategory).Select(x => x.OrderByDescending(y => y.DateTimeNow).First());
             ViewBag.DateTime = getCurrentData.First().DateTimeNow.ToString("yyyy-MM-dd HH:mm");
             return View(getCurrentData);
+        }
+        public IActionResult FuelPrice()
+        {
+            return View();
         }
 
     }

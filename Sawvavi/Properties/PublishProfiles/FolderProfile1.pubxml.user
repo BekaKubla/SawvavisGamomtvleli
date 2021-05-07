@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\bekak\OneDrive\Desktop\ProjectPublish</_PublishTargetUrl>
+    <History>True|2021-05-07T11:13:13.2629910Z;True|2021-05-05T14:47:28.8444743+04:00;True|2021-05-05T13:42:42.5236821+04:00;True|2021-05-05T13:36:27.1785168+04:00;True|2021-05-05T13:36:13.0199357+04:00;True|2021-05-05T13:02:59.7371345+04:00;True|2021-05-05T12:39:31.5275319+04:00;True|2021-05-05T12:32:58.9702225+04:00;True|2021-05-05T12:12:45.3438760+04:00;True|2021-05-04T19:44:18.1943089+04:00;True|2021-05-04T13:47:25.6660625+04:00;True|2021-05-04T13:41:00.6493922+04:00;True|2021-05-04T13:30:40.5078521+04:00;True|2021-05-04T13:23:00.4476536+04:00;</History>
+  </PropertyGroup>
+</Project>

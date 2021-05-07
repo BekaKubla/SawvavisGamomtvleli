@@ -11,11 +11,13 @@ namespace FuelProject.Controllers
 {
     public class ContactController:Controller
     {
+        [Route("Contact")]
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
+        [Route("Contact")]
         [HttpPost]
         public IActionResult Index(Contact contact)
         {
@@ -34,11 +36,11 @@ namespace FuelProject.Controllers
             using(var client=new SmtpClient())
             {
                 client.Connect("smtp.gmail.com", 587, false);
-                client.Authenticate("infomandzili@gmail.com", "nhv~fL'$^6wPV6&P");
+                client.Authenticate("infomandzili@gmail.com", "Kublashvili123!");
                 client.Send(message);
                 client.Disconnect(true);
             }
-            return RedirectToAction("index");
+            return RedirectToAction("Index","Home");
         }
     }
 }

@@ -59,10 +59,10 @@ namespace FuelProject
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Scraping}/{action=FuelPrices}");
+                    pattern: "{controller=Home}/{action=Index}");
             });
-            app.UseHangfireDashboard();
-            recurringJobManager.AddOrUpdate("Run every minute", () => serviceProvider.GetService<IFuelPriceJob>().FuelPriceJobJob(), Cron.Hourly);
+            app.UseHangfireDashboard("/EYEt<_1e*dj.jYpO=(");
+            recurringJobManager.AddOrUpdate("Run every hour", () => serviceProvider.GetService<IFuelPriceJob>().FuelPriceJobJob(), Cron.Hourly);
 
         }
     }

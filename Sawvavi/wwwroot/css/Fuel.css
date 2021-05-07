@@ -1,74 +1,81 @@
-﻿body {
-    background-image: url(http://farm1.staticflickr.com//447//19585243302_fae38fd86f_o.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    width: auto;
-    height: auto;
-    color: white;
-    font-size: 20px;
-    text-align: center
-}
-
+﻿@import url(animate.min.css);
+@import url(normalize.css);
+@import url(icomoon.css);
+@import url(font-awesome.min.css);
+@import url(meanmenu.css);
+@import url(owl.carousel.min.css);
+@import url(swiper.min.css);
+@import url(slick.css);
+@import url(jquery.fancybox.min.css);
+@import url(jquery-ui.css);
+@import url(nice-select.css);
 #myMap {
     opacity: .65;
-    object-fit: scale-down;
+    margin: auto;
+    width: 1000px;
+    padding: 150px;
+    border-radius: 18px
+}
+
+    #myMap:hover {
+        opacity: 1
+    }
+.from {
     position: relative;
-    top: 3px;
-    margin: auto;
-    width: 40%;
-    padding: 150px;
+    top: 40px;
 }
-
-    #myMap:hover {
-        opacity: 1
+.to {
+    position: relative;
+    left: 250px;
+    width:50%;
+    top:10px;
+}
+.burn {
+    position: relative;
+    left: 490px;
+    width:100%;
+    top: -20px;
+}
+.btn_calc {
+    position:relative;
+    height:auto;
+    left: 780px;
+    top:-43px;
+}
+@media (max-width: 575px) {
+    #myMap {
+        top:auto;
+        position:relative;
+        opacity: .65;
+        margin: auto;
+        width: auto;
+        padding: 150px;
+        border-radius: 18px
+    }
+    .from {
+        position: relative;
+        left:35px;
+        top: -50px;
     }
 
-input {
-    border: none;
-    outline: none;
-    text-align: center;
-    background-color: transparent;
-    color: #fff;
-    width: 10%;
-    font-size: medium;
-    border-bottom: 1px solid darkgray;
-}
-.from{
-    color:white;
-}
-.to{
-    color:white;
-}
-.burn{
-    color:white;
-}
-::placeholder{
-    color:white;
-    opacity:0.4;
-}
-#myMap {
-    opacity: .65;
-    margin: auto;
-    width: 40%;
-    padding: 150px;
-    border-radius: 8px
-}
-
-    #myMap:hover {
-        opacity: 1
+    .to {
+        position: relative;
+        width: 100%;
+        left:55px;
+        top: -40px;
     }
 
-input[type=button] {
-    background-color: transparent;
-    font-size: 23px;
-    text-decoration: none;
-    border: medium;
-    color: greenyellow;
-}
+    .burn {
+        position: relative;
+        width: 100%;
+        left:0px;
+        top: -30px;
+    }
 
-@media screen and (max-width: 849px) {
-    input {
-        width: 35%;
+    .btn_calc {
+        position: relative;
+        height: auto;
+        left:110px;
+        top: -10px;
     }
 }
