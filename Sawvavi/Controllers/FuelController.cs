@@ -9,6 +9,7 @@ namespace FuelProject.Controllers
 {
     public class FuelController :Controller
     {
+        [Route("Ruka")]
         public IActionResult MapAndGasoline()
         {
             return View();

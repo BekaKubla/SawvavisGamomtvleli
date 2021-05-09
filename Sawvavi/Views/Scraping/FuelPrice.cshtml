@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<FuelProject.Models.FuelPrice>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+
+    ViewData["Title"] ="საწვავი";
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- basic -->
@@ -28,114 +35,367 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-    <!--Table css-->
-    <link href="~/css/Scrap.css" rel="stylesheet" />
-    <!--Table css end-->
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/css/util.css">
+    <link href="~/css/Table.css" rel="stylesheet" />
+    <!--===============================================================================================-->
 </head>
 <!-- body -->
 <body class="main-layout">
     <!-- wedo  section -->
     <div class="wedo ">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="titlepage">
-                        <h2 style="color:black">გაინტერესებს საწვავის ფასები?</h2>
-                        <p style="color:black">ფასები ახლდება ავტომატურად,ყოველ ერთ საათში </p>
-                        <h5 class="last_update">ბოლო განახლება  2021-05-07 14:00</h5>
-                    </div>
+            <div class="limiter">
+                <div class="titlepage">
+                    <h2>საწვავის ფასები</h2>
+                    <p>ფასები ახლდება ყოველ 1 საათში </p>
+                    <p style="color:green">ბოლო განახლება : @ViewBag.DateTime </p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-10 offset-md-1" style="top:-50px;">
-                    <div class="row">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th style="color:black;">საწვავის დასახელება</th>
-                                    <th><img class="socar" src="~/logos/socarlogo.png" /></th>
-                                    <th><img class="rompetrol" src="~/logos/romeptrollogo.png" /></th>
-                                    <th><img class="lukoil" src="~/logos/lokoillogo.png" /></th>
-                                    <th><img class="gulf" src="~/logos/gulflogo.png" /></th>
-                                    <th><img class="portal" style="max-width:48%;height:auto;" src="~/logos/portallogo.png" /></th>
-                                    <th><img class="optima" src="~/logos/optimalogo.png" /></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>რეგულარი</td>
-                                    <td><h4>არ არის..</h4></td>
-                                    <td><h4>არ არის..</h4></td>
-                                    <td><h4>არ არის..</h4></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h4>არ არის..</h4></td>
-                                    <td><h4>არ არის..</h4></td>
-                                </tr>
-                                <tr>
-                                    <td>ევრო რეგულარი</td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                </tr>
-                                <tr>
-                                    <td>პრემიუმი</td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                </tr>
-                                <tr>
-                                    <td>სუპერი</td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>არ არის..</h3></td>
-                                    <td><h3>არ არის..</h3></td>
-                                </tr>
-                                <tr>
-                                    <td>დიზელი</td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>არ არის..</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                </tr>
-                                <tr>
-                                    <td>ევრო დიზელი</td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                </tr>
-                                <tr>
-                                    <td>თხევადი გაზი</td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>არ არის..</h3></td>
-                                    <td><h3>არ არის..</h3></td>
-                                    <td><h3>არ არის..</h3></td>
-                                    <td><h3>არ არის..</h3></td>
-                                    <td><h3>არ არის..</h3></td>
-                                </tr>
-                                <tr>
-                                    <td>ბუნებრივი გაზი</td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>არ არის..</h3></td>
-                                    <td><h3>არ არის..</h3></td>
-                                    <td><h3>2.2</h3></td>
-                                    <td><h3>არ არის..</h3></td>
-                                    <td><h3>არ არის..</h3></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="container-table100">
+                    <div class="wrap-table100">
+                        <div class="table100">
+                            <table>
+                                <thead>
+                                    <tr class="table100-head">
+                                        <th class="column1">დასახელება</th>
+                                        <th class="column2">რეგულარი</th>
+                                        <th class="column3">ევრო რეგულარი</th>
+                                        <th class="column4">პრემიუმი</th>
+                                        <th class="column5">სუპერი</th>
+                                        <th class="column6">დიზელი</th>
+                                        <th class="column7">ევრო დიზელი</th>
+                                        <th class="column8">თხევადი გაზი</th>
+                                        <th class="column9">ბუნებრივი გაზი</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="column1" style="font-size:large">Socar</td>
+                                        <td class="column2" style="color:red;text-decoration-line:line-through">არ არის...</td>
+                                        <td class="column3">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.evroregulari)
+                                                {
+                                            <h4>@item.SocarPrice.ToString("F")</h4>}
+                                                }
+                                        </td>
+                                        <td class="column4">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.premiumi)
+                                                {
+                                            <h4>@item.SocarPrice.ToString("F")</h4>}
+                                                }
+
+                                        </td>
+                                        <td class="column5">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.superi)
+                                                {
+                                            <h4>@item.SocarPrice.ToString("F")</h4>}
+                                                }
+                                        </td>
+                                        <td class="column6">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.dizeli)
+                                                {
+                                            <h4>@item.SocarPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column7">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.evrodizeli)
+                                                {
+                                            <h4>@item.SocarPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column8">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.txevadigazi)
+                                                {
+                                            <h4>@item.SocarPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column9">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.bunebrivigazi)
+                                                {
+                                            <h4>@item.SocarPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column1" style="font-size:large">Rompetrol</td>
+                                        <td class="column2" style="color:red;text-decoration-line:line-through">არ არის</td>
+                                        <td class="column3">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.evroregulari)
+                                                {
+                                            <h4>@item.RompetrolPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column4">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.premiumi)
+                                                {
+                                            <h4>@item.RompetrolPrice.ToString("F")</h4>
+                                                }
+                                             }
+                                        </td>
+                                        <td class="column5">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.superi)
+                                                {
+                                            <h4>@item.RompetrolPrice.ToString("F")</h4>
+                                                 }
+                                             }
+                                        </td>
+                                        <td class="column6">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.dizeli)
+                                                {
+                                            <h4>@item.RompetrolPrice.ToString("F")</h4>
+                                                 }
+                                           }
+                                        </td>
+                                        <td class="column7">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.evrodizeli)
+                                                {
+                                            <h4>@item.RompetrolPrice.ToString("F")</h4>
+                                            }
+                                           }
+                                        </td>
+                                        <td class="column8" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                        <td class="column9" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column1" style="font-size:large">Lukoil</td>
+                                        <td class="column2" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                        <td class="column3">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.evroregulari)
+                                                {
+                                            <h4>@item.LukoilPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column4">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.premiumi)
+                                                {
+                                            <h4>@item.LukoilPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column5">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.superi)
+                                                {
+                                            <h4>@item.LukoilPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column6" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                        <td class="column7">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.evrodizeli)
+                                                {
+                                            <h4>@item.LukoilPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column8" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                        <td class="column9" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column1" style="font-size:large">Gulf</td>
+                                        <td class="column2">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.regulari)
+                                                {
+                                            <h4>@item.GulfPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column3">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.evroregulari)
+                                                {
+                                            <h4>@item.GulfPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column4">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.premiumi)
+                                                {
+                                            <h4>@item.GulfPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column5">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.superi)
+                                                {
+                                            <h4>@item.GulfPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column6">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.dizeli)
+                                                {
+                                            <h4>@item.GulfPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column7">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.evrodizeli)
+                                                {
+                                            <h4>@item.GulfPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column8" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                        <td class="column9">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.bunebrivigazi)
+                                                {
+                                            <h4>@item.GulfPrice.ToString("F")</h4>
+                                            }
+                                                 }
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column1" style="font-size:large">Portal</td>
+                                        <td class="column2" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                        <td class="column3">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.evroregulari)
+                                                {
+                                            <h4>@item.PortalPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column4">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.premiumi)
+                                                {
+                                            <h4>@item.PortalPrice.ToString("F")</h4>
+                                                }
+                                           }
+                                        </td>
+                                        <td class="column5" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                        <td class="column6">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.dizeli)
+                                                {
+                                            <h4>@item.PortalPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column7">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.evrodizeli)
+                                                {
+                                            <h4>@item.PortalPrice.ToString("F")</h4>
+                                                }
+                                             }
+                                        </td>
+                                        <td class="column8" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                        <td class="column9" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column1" style="font-size:large">Optima</td>
+                                        <td class="column2" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                        <td class="column3">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.evroregulari)
+                                                {
+                                            <h4>@item.OptimaPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column4">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.premiumi)
+                                                {
+                                            <h4>@item.OptimaPrice.ToString("F")</h4>
+                                                }
+                                                    }
+                                        </td>
+                                        <td class="column5" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                        <td class="column6">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.dizeli)
+                                                {
+                                            <h4>@item.OptimaPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column7">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.FuelCategory == FuelProject.Models.FuelCategory.evrodizeli)
+                                                {
+                                            <h4>@item.OptimaPrice.ToString("F")</h4>
+                                                }
+                                            }
+                                        </td>
+                                        <td class="column8" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                        <td class="column9" style="color:red;text-decoration-line:line-through">არ არის..</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -160,7 +420,7 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        @await Component.InvokeAsync("Contact") 
+                        @*@await Component.InvokeAsync("Contact")*@
                     </div>
                 </div>
             </div>
@@ -168,6 +428,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
+
+                            <!-- TOP.GE ASYNC COUNTER CODE -->
+                            <div id="top-ge-counter-container" data-site-id="115107"></div>
+                            <script async src="//counter.top.ge/counter.js"></script>
+                            <!-- / END OF TOP.GE COUNTER CODE -->
+
                             <p>Copyright 2021 All Right Reserved</p>
                         </div>
                     </div>
@@ -184,5 +450,14 @@
     <!-- sidebar -->
     <script src="~/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="~/js/custom.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/js/main.js"></script>
 </body>
 </html>
